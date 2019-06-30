@@ -27,8 +27,6 @@ deploy:
   script:
     - npm i
     - npm run prod
-    - cd dist/
-    - ls
     - sshpass -V
     - export SSHPASS=$SSH_USER_PASS
-    - sshpass -e scp -o stricthostkeychecking=no -r . $HOST:/var/www/html
+    - sshpass -e scp -o stricthostkeychecking=no -r dist/ $HOST:/var/www/html
