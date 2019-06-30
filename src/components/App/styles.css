@@ -1,0 +1,11 @@
+.app {
+  width: 800px;
+  margin: 100px auto 100px auto;
+  max-height: 700px;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.app::-webkit-scrollbar {
+  display: none;
+}

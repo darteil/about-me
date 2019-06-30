@@ -1,0 +1,15 @@
+.command-line {
+  display: flex;
+}
+
+.prompt {
+  margin-right: 8px;
+}
+
+.prompt .user {
+  color: green;
+}
+
+.prompt .path {
+  color: royalblue;
+}

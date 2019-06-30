@@ -1,0 +1,40 @@
+.command-line {
+  display: flex;
+  height: 16px;
+}
+
+.command-line input {
+  width: 410px;
+  background-color: black;
+  outline: none;
+  border: none;
+  color: white;
+}
+
+.projects,
+.contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects a {
+  margin: 5px 0;
+}
+
+.projects a,
+.contacts a {
+  color: chocolate;
+}
+
+.projects a:hover,
+.contacts a:hover {
+  opacity: 0.8;
+}
+
+.ls {
+  display: flex;
+}
+
+.ls > div {
+  margin-right: 10px;
+}
