@@ -1,6 +1,7 @@
 image: node:latest
 
 cache:
+  key: ci
   paths:
     - node_modules
     - build
@@ -29,4 +30,4 @@ deploy:
     - npm run prod
     - sshpass -V
     - export SSHPASS=$SSH_USER_PASS
-    - sshpass -e scp -o stricthostkeychecking=no -r dist/ $HOST:/var/www/html
+    - sshpass -e scp -o stricthostkeychecking=no -r dist/* $HOST:/var/www/html
