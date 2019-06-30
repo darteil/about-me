@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.tsx",
   "scripts": {
-    "prod": "./node_modules/.bin/webpack --config ./config/webpack.prod.js --mode production",
-    "lint": "./node_modules/.bin/prettier --config ./.prettierrc.js ./src/**/*.tsx ./src/**/*.ts --write"
+    "prod": "./node_modules/.bin/webpack --config ./config/webpack.prod.js --mode production"
   },
   "author": "Romanov Yurii",
   "license": "MIT",
