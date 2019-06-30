@@ -1,0 +1,31 @@
+image: node:latest
+
+cashe:
+  paths:
+    - node_modules/
+    - build/
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  only:
+    - master
+  script:
+    - npm i
+    - npm run prod
+
+deploy:
+  stage: deploy
+  only:
+    - master
+  script:
+    - npm i
+    - npm run prod
+    - cd dist/
+    - ls
+    - sshpass -V
+    - export SSHPASS=$SSH_USER_PASS
+    - sshpass -e scp -o stricthostkeychecking=no -r . $HOST:/var/www/html
