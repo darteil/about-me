@@ -5,6 +5,9 @@ cache:
     - node_modules
     - build
 
+before_script:
+  - apt-get update -qq && apt-get install -y -qq sshpass
+
 stages:
   - build
   - deploy
