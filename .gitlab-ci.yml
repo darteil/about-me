@@ -1,9 +1,9 @@
 image: node:latest
 
-cashe:
+cache:
   paths:
-    - node_modules/
-    - build/
+    - node_modules
+    - build
 
 stages:
   - build
