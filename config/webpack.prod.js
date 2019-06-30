@@ -10,7 +10,7 @@ const distPath = path.resolve(__dirname, '../dist');
 const publicPathFolder = path.resolve(__dirname, '../public');
 
 module.exports = (env, argv) => {
-  let publicPath = '/terminal';
+  let publicPath = '';
 
   return merge(base(env, argv), {
     devtool: 'source-map',
