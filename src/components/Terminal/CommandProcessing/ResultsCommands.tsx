@@ -33,7 +33,7 @@ export const Projects = (): JSX.Element => (
     <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/robots-civ-clicker">
       RobotsCivClicker
     </a>
-    <a target="_blank" rel="noopener noreferrer" href="https://github.com/darteil/POELadder">
+    <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/poe-ladder">
       POELadder
     </a>
   </div>
