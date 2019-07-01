@@ -17,7 +17,7 @@ export const Greeting = (): JSX.Element => (
 
 export const Help = (): JSX.Element => (
   <div>
-    <p>ls - список дотупных файлов</p>
+    <p>ls - список доступных файлов</p>
     <p>cat [filename] - просмотр файла</p>
   </div>
 );
