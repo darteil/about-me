@@ -24,13 +24,13 @@ export const Help = (): JSX.Element => (
 
 export const Projects = (): JSX.Element => (
   <div className={styles.projects}>
-    <a target="_blank" rel="noopener noreferrer" href="https://github.com/darteil/StackGame">
+    <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/stack/">
       StackGame
     </a>
-    <a target="_blank" rel="noopener noreferrer" href="https://github.com/darteil/myPomodoro">
+    <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/my-pomodoro">
       myPomodoro
     </a>
-    <a target="_blank" rel="noopener noreferrer" href="https://github.com/darteil/RobotsCivClicker">
+    <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/robots-civ-clicker">
       RobotsCivClicker
     </a>
     <a target="_blank" rel="noopener noreferrer" href="https://github.com/darteil/POELadder">
