@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.tsx",
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --config ./config/webpack.dev.js --mode development",
     "prod": "./node_modules/.bin/webpack --config ./config/webpack.prod.js --mode production",
     "lint": "./node_modules/.bin/prettier --config ./.prettierrc.js ./src/**/*.tsx ./src/**/*.ts --write"
   },
