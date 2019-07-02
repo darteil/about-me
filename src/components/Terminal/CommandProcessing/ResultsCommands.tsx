@@ -19,6 +19,7 @@ export const Help = (): JSX.Element => (
   <div>
     <p>ls - список доступных файлов</p>
     <p>cat [filename] - просмотр файла</p>
+    <p>clear - очистка экрана</p>
   </div>
 );
 
@@ -60,3 +61,5 @@ export const Ls = (): JSX.Element => (
     <div>about.txt</div>
   </div>
 );
+
+export const Clear = (): JSX.Element => <></>;
