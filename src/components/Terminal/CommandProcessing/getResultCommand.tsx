@@ -5,7 +5,7 @@ import Commands from './commands';
 const getResultCommand = (command: string): (() => JSX.Element) => {
   const commands = new Commands();
   const trimCommand = command.trim();
-  const div = (): JSX.Element => <div />;
+  const empty = (): JSX.Element => <></>;
   const notFound = (): JSX.Element => <div>{`${command}: command not found`}</div>;
 
   if (trimCommand === 'exit') {
@@ -13,7 +13,7 @@ const getResultCommand = (command: string): (() => JSX.Element) => {
   }
 
   if (!trimCommand.length) {
-    return div;
+    return empty;
   }
 
   switch (trimCommand) {
@@ -32,8 +32,11 @@ const getResultCommand = (command: string): (() => JSX.Element) => {
     case commands.help: {
       return results.Help;
     }
+    case commands.clear: {
+      return empty;
+    }
     case '': {
-      return div;
+      return empty;
     }
     default: {
       return notFound;
