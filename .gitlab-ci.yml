@@ -13,6 +13,14 @@ stages:
   - build
   - deploy
 
+linting:
+  stage: build
+  only:
+    - master
+  script:
+    - npm i
+    - npm run lint
+
 build:
   stage: build
   only:
