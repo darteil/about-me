@@ -25,6 +25,7 @@ export const Help = (): JSX.Element => (
 
 export const Projects = (): JSX.Element => (
   <div className={styles.projects}>
+    <p>Примеры веб-приложений:</p>
     <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/stack/">
       StackGame
     </a>
