@@ -1,6 +1,6 @@
 class Config {
-  public websocketUrl = 'ws://darteil-projects.ru:3333';
-  public apiUrl = 'http://darteil-projects.ru:3000/';
+  public websocketUrl = 'ws://darteil-projects.ru';
+  public apiUrl = 'http://darteil-projects.ru/';
 }
 
 export default new Config();
