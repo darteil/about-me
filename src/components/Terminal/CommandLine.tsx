@@ -1,4 +1,4 @@
-import React, { useEffect, useState, KeyboardEvent, useRef } from 'react';
+import React, { useState, KeyboardEvent, useRef } from 'react';
 import Prompt from '../FakeTerminal/Prompt';
 import styles from './styles.css';
 
@@ -23,23 +23,25 @@ const CommandLine = (props: IProp): JSX.Element => {
   };
 
   const onBlur = (): void => {
-    if (inputElement.current) {
-      inputElement.current.focus();
-    }
+    /*
+    / Почему здесь setTimeout? - спросите вы.
+    / Потому что без него focus() не работает в firefox... - отвечу вам я.
+    */
+    setTimeout((): void => {
+      if (inputElement.current) {
+        inputElement.current.focus();
+      }
+    }, 1);
   };
-
-  useEffect((): void => {
-    if (inputElement.current) {
-      inputElement.current.focus();
-    }
-  }, []);
 
   return (
     <>
       <div className={styles['command-line']}>
         <Prompt path="darteil-projects.ru" />
         {commandSend && <div>{command}</div>}
-        {!commandSend && <input maxLength={25} onBlur={onBlur} ref={inputElement} onKeyDown={onKeyDown} type="text" />}
+        {!commandSend && (
+          <input autoFocus maxLength={25} onBlur={onBlur} ref={inputElement} onKeyDown={onKeyDown} type="text" />
+        )}
       </div>
     </>
   );

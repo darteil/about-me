@@ -1,0 +1,94 @@
+.chat-login {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: black;
+}
+
+.window {
+  width: 450px;
+  height: 150px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  border: solid 1px green;
+  box-shadow: 0 0 0 4px green;
+  outline: solid 3px #001628;
+}
+
+.greeting {
+  padding-top: 50px;
+}
+
+.greeting p {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 228px;
+}
+
+.border {
+  width: 100%;
+  height: 100%;
+  border: 1px solid red;
+}
+
+.login button {
+  width: 120px;
+  height: 30px;
+  font-weight: bolder;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  background-color: green;
+}
+
+.login button:hover {
+  background-color: azure;
+  cursor: pointer;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login input {
+  width: 200px;
+  padding: 5px;
+  margin-bottom: 10px;
+  outline: none;
+  border: 1px solid green;
+  background-color: #001628;
+  color: white;
+}
+
+.login button {
+  width: 212px;
+}
+
+.error-wrap {
+  margin-top: 9px;
+}
+
+.error {
+  text-align: center;
+  color: red;
+  margin: 0 0 12px 0;
+}

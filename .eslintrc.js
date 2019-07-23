@@ -7,7 +7,7 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   rules: {
-    '@typescript-eslint/indent': ['error', 2],
+    'linebreak-style': ['error', 'unix'],
     '@typescript-eslint/interface-name-prefix': ['always'],
     '@typescript-eslint/no-explicit-any': 0,
     'prettier/prettier': 'error',

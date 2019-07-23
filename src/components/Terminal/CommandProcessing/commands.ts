@@ -5,6 +5,7 @@ class Commands {
   public catProjects: string = 'cat projects.txt';
   public catContacts: string = 'cat contacts.txt';
   public clear: string = 'clear';
+  public chat: string = 'chat';
 }
 
 export default Commands;
