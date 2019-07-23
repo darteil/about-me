@@ -35,6 +35,9 @@ const getResultCommand = (command: string): (() => JSX.Element) => {
     case commands.clear: {
       return empty;
     }
+    case commands.chat: {
+      return empty;
+    }
     case '': {
       return empty;
     }

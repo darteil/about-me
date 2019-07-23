@@ -1,0 +1,16 @@
+.users-list {
+  list-style: none;
+  padding: 0;
+  max-height: 97%;
+  scrollbar-width: none;
+  overflow: scroll;
+}
+
+.users-list::-webkit-scrollbar {
+  display: none;
+}
+
+.users-list-item {
+  margin: 2px;
+  margin: 5px 0 5px 0;
+}

@@ -13,5 +13,12 @@ module.exports = (env, argv) =>
       overlay: true,
       port: 4000,
       historyApiFallback: true,
+      proxy: [
+        {
+          context: ['/api'],
+          target: 'http://localhost:3000',
+          pathRewrite: { '^/api': '' },
+        },
+      ],
     },
   });
