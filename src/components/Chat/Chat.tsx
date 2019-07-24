@@ -21,6 +21,12 @@ export const Chat = (props: IProp): JSX.Element => {
   const [userName, setUserName] = useState<string | null>(localStorage.getItem('darTeilProjectsUserName'));
   const { chat } = useContext(SocketContext);
 
+  useEffect((): void => {
+    if (userName && showUsers) {
+      chat.emit('online');
+    }
+  }, [showUsers]);
+
   useEffect((): (() => void) => {
     if (userName) {
       chat.emit('join', localStorage.getItem('darTeilProjectsUserName'));
