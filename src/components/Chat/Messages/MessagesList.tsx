@@ -12,9 +12,23 @@ interface IMessage {
 }
 
 const MessagesList = (): JSX.Element => {
-  const [messages, setMessges] = useState<IMessage[]>([]);
+  const [messages, setMessages] = useState<IMessage[]>([]);
   const messList = useRef<HTMLUListElement>(null);
   const { chat } = useContext(SocketContext);
+
+  const addNewMessage = (mess: IMessage) => {
+    setMessages((messages: IMessage[]) => {
+      return [
+        ...messages,
+        {
+          id: mess.id,
+          userName: mess.userName,
+          createdAt: mess.createdAt,
+          text: mess.text,
+        },
+      ];
+    });
+  };
 
   useEffect((): void => {
     if (messList.current !== null) {
@@ -34,26 +48,22 @@ const MessagesList = (): JSX.Element => {
             text: message.text,
           });
         });
-        setMessges([...lastMessages]);
+        setMessages(lastMessages);
       })
       .catch((error): void => {
         console.warn(error);
       });
   }, []);
 
-  useEffect((): void => {
+  useEffect((): (() => void) => {
     chat.on('message', (mess: IMessage): void => {
-      setMessges([
-        ...messages,
-        {
-          id: mess.id,
-          userName: mess.userName,
-          createdAt: mess.createdAt,
-          text: mess.text,
-        },
-      ]);
+      addNewMessage(mess);
     });
-  });
+
+    return (): void => {
+      chat.off('message');
+    };
+  }, []);
 
   return (
     <ul ref={messList} className={styles['messages-list']}>

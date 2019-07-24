@@ -18,18 +18,18 @@ export const ChatContext = React.createContext({
 export const Chat = (props: IProp): JSX.Element => {
   const [showUsers, setShowUsers] = useState<boolean>(true);
   const [showHelpStatus, setShowHelpStatus] = useState<boolean>(false);
-  const [userName, setUserName] = useState<string | null>(localStorage.getItem('userName'));
+  const [userName, setUserName] = useState<string | null>(localStorage.getItem('darTeilProjectsUserName'));
   const { chat } = useContext(SocketContext);
 
   useEffect((): (() => void) => {
     if (userName) {
-      chat.emit('join', localStorage.getItem('userName'));
+      chat.emit('join', localStorage.getItem('darTeilProjectsUserName'));
     }
 
     return (): void => {
       chat.emit('leave');
     };
-  }, []);
+  }, [userName]);
 
   const changeUserName = (name: string | null): void => {
     setUserName(name);

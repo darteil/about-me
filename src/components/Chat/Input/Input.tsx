@@ -22,7 +22,7 @@ const Input = (props: IProp): JSX.Element => {
         switch (text) {
           case Commands.setUserName: {
             event.currentTarget.value = '';
-            localStorage.removeItem('userName');
+            localStorage.removeItem('darTeilProjectsUserName');
             changeUserName(null);
             break;
           }
@@ -53,7 +53,7 @@ const Input = (props: IProp): JSX.Element => {
           }
           default: {
             chat.emit('message', {
-              userName: localStorage.getItem('userName'),
+              userName: localStorage.getItem('darTeilProjectsUserName'),
               text: event.currentTarget.value,
             });
             event.currentTarget.value = '';

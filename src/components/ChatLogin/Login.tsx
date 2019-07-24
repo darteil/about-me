@@ -15,7 +15,7 @@ const Login = (): JSX.Element => {
     } else if (userName.length < 4) {
       setError('Name must be at least 4 characters');
     } else {
-      localStorage.setItem('userName', userName);
+      localStorage.setItem('darTeilProjectsUserName', userName);
       changeUserName(userName);
     }
   };
