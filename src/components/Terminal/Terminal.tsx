@@ -18,9 +18,11 @@ const Terminal = (): JSX.Element => {
   };
 
   const addNewCommandToHistory = (command: string): void => {
-    setCommandHistory((prevState: string[]) => {
-      return [command, ...prevState];
-    });
+    if (!commandHistory.includes(command)) {
+      setCommandHistory((prevState: string[]) => {
+        return [command, ...prevState];
+      });
+    }
   };
 
   const pushCommand = (command: string, output: () => JSX.Element): void => {
