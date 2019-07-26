@@ -1,6 +1,7 @@
 import React, { useState, KeyboardEvent, useRef, useContext, useEffect } from 'react';
 import TerminalContext from './TerminalContext';
 import Prompt from '../FakeTerminal/Prompt';
+import catAutocompleteFileNames from './catAutocompleteFileNames';
 import styles from './styles.css';
 
 interface IProp {
@@ -17,6 +18,7 @@ const CommandLine = (props: IProp): JSX.Element => {
   const ENTER_KEY = 13;
   const ARROW_UP_KEY = 38;
   const ARROW_UP_DOWN = 40;
+  const TAB_KEY = 9;
 
   const setInputCommand = (value: string): void => {
     if (inputElement.current) {
@@ -33,10 +35,10 @@ const CommandLine = (props: IProp): JSX.Element => {
   }, [previousCommandIndex]);
 
   const onKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
+    const text = event.currentTarget.value;
+
     switch (event.keyCode) {
       case ENTER_KEY: {
-        const text = event.currentTarget.value;
-
         props.onInput(text);
         setCommandSend(true);
         setCommand(text);
@@ -75,6 +77,16 @@ const CommandLine = (props: IProp): JSX.Element => {
             setPreviousCommandIndex(previousCommandIndex - 1);
           }
         }
+        break;
+      }
+      case TAB_KEY: {
+        event.preventDefault();
+        const result: string = catAutocompleteFileNames(text);
+
+        if (result !== '') {
+          setInputCommand(result);
+        }
+
         break;
       }
     }
