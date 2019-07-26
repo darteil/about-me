@@ -28,11 +28,8 @@ export const Help = (): JSX.Element => (
 export const Projects = (): JSX.Element => (
   <div className={styles.projects}>
     <p>Примеры веб-приложений:</p>
-    <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/stack/">
-      StackGame
-    </a>
-    <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/my-pomodoro">
-      myPomodoro
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/darteil/darteil-projects.ru">
+      darteil-projects.ru
     </a>
     <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/robots-civ-clicker">
       RobotsCivClicker
@@ -60,8 +57,6 @@ export const Contacts = (): JSX.Element => (
 
 export const Ls = (): JSX.Element => (
   <div className={styles.ls}>
-    <div>projects.txt</div>
-    <div>contacts.txt</div>
-    <div>about.txt</div>
+    <p>projects.txt contacts.txt about.txt</p>
   </div>
 );
