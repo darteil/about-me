@@ -21,7 +21,7 @@ export const Help = (): JSX.Element => (
     <p>ls - список доступных файлов</p>
     <p>cat [filename] - просмотр файла</p>
     <p>clear - очистка экрана</p>
-    <p>chat - запуск чата</p>
+    {/*<p>chat - запуск чата</p>*/}
   </div>
 );
 
@@ -54,7 +54,7 @@ export const Contacts = (): JSX.Element => (
     <p>
       Email: <a href="mailto:darteil.work@gmail.com">darteil.work@gmail.com</a>
     </p>
-    <p>Вы так же можете ввести в терминал команду "chat" и оставить сообщение там</p>
+    {/*<p>Вы так же можете ввести в терминал команду "chat" и оставить сообщение там</p>*/}
   </div>
 );
 
