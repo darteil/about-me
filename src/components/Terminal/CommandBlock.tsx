@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CommandLine from './CommandLine';
-import getResultCommand from './CommandProcessing/getResultCommand';
+import getResultCommand from './CommandProcessing/ResultCommands/getResultCommand';
 
 interface IProp {
   push: (command: string, output: () => JSX.Element) => void;
