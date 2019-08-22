@@ -1,6 +1,10 @@
 import React from 'react';
-import * as results from './ResultsCommands';
-import Commands from './commands';
+import Greeting from './Greeting';
+import Help from './Help';
+import Projects from './Projects';
+import Contacts from './Contacts';
+import Ls from './Ls';
+import Commands from '../commands';
 
 const getResultCommand = (command: string): (() => JSX.Element) => {
   const commands = new Commands();
@@ -18,19 +22,19 @@ const getResultCommand = (command: string): (() => JSX.Element) => {
 
   switch (trimCommand) {
     case commands.about: {
-      return results.Greeting;
+      return Greeting;
     }
     case commands.catProjects: {
-      return results.Projects;
+      return Projects;
     }
     case commands.catContacts: {
-      return results.Contacts;
+      return Contacts;
     }
     case commands.ls: {
-      return results.Ls;
+      return Ls;
     }
     case commands.help: {
-      return results.Help;
+      return Help;
     }
     case commands.clear: {
       return empty;

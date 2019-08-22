@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FakeTerminal from '../FakeTerminal';
 import Terminal from '../Terminal';
-import { Greeting } from '../Terminal/CommandProcessing/ResultsCommands';
+import Greeting from '../Terminal/CommandProcessing/ResultCommands/Greeting';
 import styles from './styles.css';
 
 const App = (): JSX.Element => {
