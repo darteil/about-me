@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   z-index: 2;
-  background-color: black;
+  background-color: #222222;
 }
 
 .window {
@@ -75,7 +75,7 @@
   margin-bottom: 10px;
   outline: none;
   border: 1px solid green;
-  background-color: #001628;
+  background-color: #222222;
   color: white;
 }
 
