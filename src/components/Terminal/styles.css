@@ -5,10 +5,10 @@
 
 .command-line input {
   width: 410px;
-  background-color: black;
+  background-color: #222222;
   outline: none;
   border: none;
-  color: white;
+  color: #c6a57b;
 }
 
 .projects,
