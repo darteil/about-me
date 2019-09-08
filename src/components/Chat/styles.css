@@ -25,15 +25,15 @@
 }
 
 .grid > div {
-  margin: 1em 0.3em 1em 0.3em;
+  margin: 0.8em 0.3em 0.8em 0.3em;
   font-size: 14px;
-  outline: 1px solid green;
+  outline: 1px solid #5a7c0b;
   position: relative;
   padding: 0.7em 1.2em;
 }
 
 .grid > div .head {
-  color: green;
+  color: #5a7c0b;
   position: absolute;
   left: 1em;
   top: -0.8em;
