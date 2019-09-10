@@ -46,7 +46,7 @@ const CommandLine = (props: IProp): JSX.Element => {
         break;
       }
       case ARROW_UP_KEY: {
-        if (previousCommandIndex === null) {
+        if (previousCommandIndex === null && commandHistory.length !== 0) {
           setPreviousCommandIndex(0);
           break;
         }
