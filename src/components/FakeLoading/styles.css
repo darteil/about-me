@@ -1,0 +1,12 @@
+.packages-list ul {
+  margin: 0;
+  padding: 0;
+}
+
+.packages-list .ok-inicator {
+  color: #5a7c0b;
+}
+
+.packages-list .wait-inicator {
+  color: coral;
+}
