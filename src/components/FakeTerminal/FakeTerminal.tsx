@@ -17,7 +17,7 @@ const FakeTerminal = (props: IProps): JSX.Element => {
         <Prompt />
         <div>
           <Typist
-            startDelay={1200}
+            startDelay={500}
             onTypingDone={(): void => {
               setFirstLineDone(true);
             }}
