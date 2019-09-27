@@ -15,13 +15,13 @@
   padding: 5px 0 5px 0;
 }
 
-.message-item .user-name {
+.user-name {
   color: chocolate;
   font-weight: bolder;
   margin-right: 10px;
 }
 
-.message-item .time {
+.time {
   color: chartreuse;
   margin-right: 5px;
 }
