@@ -3,10 +3,10 @@
   padding: 0;
 }
 
-.packages-list .ok-inicator {
+.ok-inicator {
   color: #5a7c0b;
 }
 
-.packages-list .wait-inicator {
+.wait-inicator {
   color: coral;
 }
