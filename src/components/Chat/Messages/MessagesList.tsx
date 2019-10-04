@@ -30,17 +30,17 @@ const MessagesList = (): JSX.Element => {
     });
   };
 
-  useEffect((): void => {
+  useEffect(() => {
     if (messList.current !== null) {
       messList.current.scrollTop = messList.current.scrollHeight;
     }
   }, [messages]);
 
-  useEffect((): void => {
+  useEffect(() => {
     APIService.getLastMessages()
-      .then((responce): void => {
+      .then(response => {
         const lastMessages: IMessage[] = [];
-        responce.data.forEach((message: IMessage): void => {
+        response.data.forEach((message: IMessage) => {
           lastMessages.push({
             id: message.id,
             userName: message.userName,
@@ -50,17 +50,17 @@ const MessagesList = (): JSX.Element => {
         });
         setMessages(lastMessages);
       })
-      .catch((error): void => {
+      .catch(error => {
         console.warn(error);
       });
   }, []);
 
-  useEffect((): (() => void) => {
-    chat.on('message', (mess: IMessage): void => {
+  useEffect(() => {
+    chat.on('message', (mess: IMessage) => {
       addNewMessage(mess);
     });
 
-    return (): void => {
+    return () => {
       chat.off('message');
     };
   }, []);

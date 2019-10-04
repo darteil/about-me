@@ -13,11 +13,11 @@ const Terminal = (): JSX.Element => {
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const commands = new Commands();
 
-  const chatClose = (): void => {
+  const chatClose = () => {
     setShowChat(false);
   };
 
-  const addNewCommandToHistory = (command: string): void => {
+  const addNewCommandToHistory = (command: string) => {
     if (!commandHistory.includes(command)) {
       setCommandHistory((prevState: string[]) => {
         return [command, ...prevState];
@@ -25,8 +25,8 @@ const Terminal = (): JSX.Element => {
     }
   };
 
-  const pushCommand = (command: string, output: () => JSX.Element): void => {
-    const saveCommand = (): void => {
+  const pushCommand = (command: string, output: () => JSX.Element) => {
+    const saveCommand = () => {
       setHistory([...history, { id: generateUniqueId(), command, output }]);
       addNewCommandToHistory(command);
     };

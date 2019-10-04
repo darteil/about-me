@@ -12,8 +12,8 @@ const UsersList = (): JSX.Element => {
   const [users, setUsers] = useState<IUser[]>([]);
   const { chat } = useContext(SocketContext);
 
-  useEffect((): void => {
-    chat.on('online', (onlineUsers: IUser[]): void => {
+  useEffect(() => {
+    chat.on('online', (onlineUsers: IUser[]) => {
       setUsers([...onlineUsers]);
     });
   }, []);
