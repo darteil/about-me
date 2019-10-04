@@ -20,13 +20,13 @@ const CommandLine = (props: IProp): JSX.Element => {
   const ARROW_UP_DOWN = 40;
   const TAB_KEY = 9;
 
-  const setInputCommand = (value: string): void => {
+  const setInputCommand = (value: string) => {
     if (inputElement.current) {
       inputElement.current.value = value;
     }
   };
 
-  useEffect((): void => {
+  useEffect(() => {
     if (previousCommandIndex !== null) {
       setInputCommand(commandHistory[previousCommandIndex]);
     } else {
@@ -34,7 +34,7 @@ const CommandLine = (props: IProp): JSX.Element => {
     }
   }, [previousCommandIndex]);
 
-  const onKeyDown = (event: KeyboardEvent<HTMLInputElement>): void => {
+  const onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
     const text = event.currentTarget.value;
 
     switch (event.keyCode) {
@@ -92,12 +92,12 @@ const CommandLine = (props: IProp): JSX.Element => {
     }
   };
 
-  const onBlur = (): void => {
+  const onBlur = () => {
     /*
     / Почему здесь setTimeout? - спросите вы.
     / Потому что без него focus() не работает в firefox... - отвечу вам я.
     */
-    setTimeout((): void => {
+    setTimeout(() => {
       if (inputElement.current) {
         inputElement.current.focus();
       }

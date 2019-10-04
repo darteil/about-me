@@ -9,7 +9,7 @@ interface IProp {
 const CommandBlock = (props: IProp): JSX.Element => {
   const [result, setResult] = useState<JSX.Element>(<div></div>);
 
-  const pushCommand = (command: string): void => {
+  const pushCommand = (command: string) => {
     let output: () => JSX.Element = getResultCommand(command);
     setResult(output);
     props.push(command, output);

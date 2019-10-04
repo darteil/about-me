@@ -9,8 +9,8 @@ const App = (): JSX.Element => {
   const [showContent, setShowContent] = useState<boolean>(false);
   const [showLoading, setShowLoading] = useState<boolean>(true);
 
-  useEffect((): void => {
-    setTimeout((): void => {
+  useEffect(() => {
+    setTimeout(() => {
       setShowLoading(false);
     }, 3000);
   }, []);

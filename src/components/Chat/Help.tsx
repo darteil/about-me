@@ -9,16 +9,16 @@ interface IProps {
 
 const Help = (props: IProps): JSX.Element => {
   const ESCAPE_KEY = 27;
-  const hide = (event: KeyboardEvent): void => {
+  const hide = (event: KeyboardEvent) => {
     if (event.keyCode === ESCAPE_KEY) {
       props.hideHelp();
     }
   };
 
-  useEffect((): (() => void) => {
+  useEffect(() => {
     document.addEventListener('keydown', hide);
 
-    return (): void => {
+    return () => {
       document.removeEventListener('keydown', hide);
     };
   }, []);

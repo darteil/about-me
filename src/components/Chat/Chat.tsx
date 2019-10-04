@@ -12,7 +12,7 @@ interface IProp {
 }
 
 export const ChatContext = React.createContext({
-  changeUserName: (name: string | null): void => {},
+  changeUserName: (name: string | null) => {},
 });
 
 export const Chat = (props: IProp): JSX.Element => {
@@ -21,35 +21,35 @@ export const Chat = (props: IProp): JSX.Element => {
   const [userName, setUserName] = useState<string | null>(localStorage.getItem('darTeilProjectsUserName'));
   const { chat } = useContext(SocketContext);
 
-  useEffect((): void => {
+  useEffect(() => {
     if (userName && showUsers) {
       chat.emit('online');
     }
   }, [showUsers]);
 
-  useEffect((): (() => void) => {
+  useEffect(() => {
     if (userName) {
       chat.emit('join', localStorage.getItem('darTeilProjectsUserName'));
     }
 
-    return (): void => {
+    return () => {
       chat.emit('leave');
     };
   }, [userName]);
 
-  const changeUserName = (name: string | null): void => {
+  const changeUserName = (name: string | null) => {
     setUserName(name);
   };
 
-  const showHelp = (): void => {
+  const showHelp = () => {
     setShowHelpStatus(true);
   };
 
-  const hideHelp = (): void => {
+  const hideHelp = () => {
     setShowHelpStatus(false);
   };
 
-  const exit = (): void => {
+  const exit = () => {
     props.onClose();
   };
 

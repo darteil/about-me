@@ -7,7 +7,7 @@ const Login = (): JSX.Element => {
   const [error, setError] = useState<string>('');
   const { changeUserName } = useContext(ChatContext);
 
-  const hundleSubmit = (event: MouseEvent<HTMLButtonElement>): void => {
+  const handleSubmit = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
 
     if (userName === '') {
@@ -25,12 +25,12 @@ const Login = (): JSX.Element => {
       <form data-testid="login-form">
         <input
           value={userName}
-          onChange={(event): void => {
+          onChange={event => {
             setUserName(event.target.value);
           }}
           type="text"
         />
-        <button type="submit" onClick={hundleSubmit}>
+        <button type="submit" onClick={handleSubmit}>
           GO
         </button>
       </form>

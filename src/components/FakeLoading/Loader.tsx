@@ -5,8 +5,8 @@ const frames: string[] = ['◢', '◣', '◤', '◥'];
 const Loader = (): JSX.Element => {
   const [indicator, setIndicator] = useState<number>(0);
 
-  useEffect((): (() => void) => {
-    const interval = setInterval((): void => {
+  useEffect(() => {
+    const interval = setInterval(() => {
       setIndicator((indicator: number): number => {
         if (indicator >= 3) {
           return 0;
@@ -16,7 +16,7 @@ const Loader = (): JSX.Element => {
       });
     }, 200);
 
-    return (): void => {
+    return () => {
       clearInterval(interval);
     };
   }, []);

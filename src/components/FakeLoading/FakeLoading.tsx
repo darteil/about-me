@@ -20,12 +20,12 @@ const FakeLoading = (): JSX.Element => {
         {packagesList.map(
           (packageItem: string): JSX.Element => (
             <li key={packageItem}>
-              [ <span className={styles['ok-inicator']}>ok</span> ] {packageItem}
+              [ <span className={styles['ok-indicator']}>ok</span> ] {packageItem}
             </li>
           ),
         )}
         <li key="starting">
-          [ <span className={styles['wait-inicator']}>wait</span> ] Starting app <Loader />
+          [ <span className={styles['wait-indicator']}>wait</span> ] Starting app <Loader />
         </li>
       </ul>
     </div>

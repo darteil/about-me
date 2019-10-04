@@ -14,7 +14,7 @@ const Input = (props: IProp): JSX.Element => {
   const { chat } = useContext(SocketContext);
   const { changeUserName } = useContext(ChatContext);
 
-  const onKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>): void => {
+  const onKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
     if (event.keyCode === 13) {
       if (!event.shiftKey) {
         const text = event.currentTarget.value;

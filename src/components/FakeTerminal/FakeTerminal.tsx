@@ -18,7 +18,7 @@ const FakeTerminal = (props: IProps): JSX.Element => {
         <div>
           <Typist
             startDelay={500}
-            onTypingDone={(): void => {
+            onTypingDone={() => {
               setFirstLineDone(true);
             }}
             cursor={cursorSettings}
@@ -34,7 +34,7 @@ const FakeTerminal = (props: IProps): JSX.Element => {
             <Typist
               cursor={cursorSettings}
               startDelay={400}
-              onTypingDone={(): void => {
+              onTypingDone={() => {
                 props.onDone(true);
               }}
             >
