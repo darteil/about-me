@@ -24,7 +24,7 @@ const FakeLoading = (): JSX.Element => {
             </li>
           ),
         )}
-        <li key="starting">
+        <li key="starting" className={styles.starting}>
           [ <span className={styles['wait-indicator']}>wait</span> ] Starting app <Loader />
         </li>
       </ul>
