@@ -3,10 +3,20 @@
   padding: 0;
 }
 
+.packages-list ul li.starting {
+  margin-top: 10px;
+}
+
 .ok-indicator {
   color: #5a7c0b;
 }
 
 .wait-indicator {
   color: coral;
+}
+
+.spinner {
+  color: dodgerblue;
+  font-weight: bolder;
+  font-size: 18px;
 }

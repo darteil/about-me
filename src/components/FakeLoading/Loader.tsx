@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import styles from './styles.css';
 
-const frames: string[] = ['◢', '◣', '◤', '◥'];
+const frames: string[] = ['▹▹▹▹▹', '▸▹▹▹▹', '▹▸▹▹▹', '▹▹▸▹▹', '▹▹▹▸▹', '▹▹▹▹▸'];
 
 const Loader = (): JSX.Element => {
   const [indicator, setIndicator] = useState<number>(0);
@@ -8,7 +9,7 @@ const Loader = (): JSX.Element => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndicator((indicator: number): number => {
-        if (indicator >= 3) {
+        if (indicator >= 5) {
           return 0;
         }
 
@@ -21,7 +22,7 @@ const Loader = (): JSX.Element => {
     };
   }, []);
 
-  return <span>{frames[indicator]}</span>;
+  return <span className={styles.spinner}>{frames[indicator]}</span>;
 };
 
 export default Loader;
