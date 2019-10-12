@@ -1,14 +1,19 @@
 {
   "name": "darteil-projects.ru",
   "version": "1.0.0",
-  "description": "",
+  "description": "Portfolio web site",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darteil/darteil-projects.ru"
+  },
   "main": "index.tsx",
+  "author": "Romanov Yuri",
+  "homepage": "http://darteil-projects.ru/",
+  "license": "MIT",
   "scripts": {
     "prod": "./node_modules/.bin/webpack --config ./config/webpack.prod.js --mode production",
     "lint": "./node_modules/.bin/prettier --config ./.prettierrc.js ./src/**/*.tsx ./src/**/*.ts --write"
   },
-  "author": "Romanov Yurii",
-  "license": "MIT",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^1.9.0",
