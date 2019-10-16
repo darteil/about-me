@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './styles.css';
 
-const frames: string[] = ['▹▹▹▹▹', '▸▹▹▹▹', '▹▸▹▹▹', '▹▹▸▹▹', '▹▹▹▸▹', '▹▹▹▹▸'];
+const frames: string[] = ['.  ', '.. ', '...', '   '];
 
 const Loader = (): JSX.Element => {
   const [indicator, setIndicator] = useState<number>(0);
@@ -9,13 +9,13 @@ const Loader = (): JSX.Element => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndicator((indicator: number): number => {
-        if (indicator >= 5) {
+        if (indicator >= 3) {
           return 0;
         }
 
         return indicator + 1;
       });
-    }, 200);
+    }, 300);
 
     return () => {
       clearInterval(interval);
