@@ -23,7 +23,7 @@ const Skills = (): JSX.Element => (
         Gulp <span className={styles['complete-status']}>✔️</span>
       </li>
       <li>
-        TypeScript <span className={styles['wait-status']}>●</span> (нет опыта коммерческой разработки)
+        TypeScript <span className={styles['wait-status']}>●</span> (знаком с ним, но нет опыта коммерческой разработки)
       </li>
     </ul>
   </div>
