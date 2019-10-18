@@ -4,6 +4,7 @@ class Commands {
   public ls: string = 'ls';
   public catProjects: string = 'cat projects.txt';
   public catContacts: string = 'cat contacts.txt';
+  public catSkills: string = 'cat professional-skills.txt';
   public clear: string = 'clear';
   public chat: string = 'chat';
 }

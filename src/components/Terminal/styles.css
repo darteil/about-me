@@ -38,3 +38,15 @@
 .ls > div {
   margin-right: 10px;
 }
+
+.skills ul {
+  list-style: none;
+}
+
+.complete-status {
+  color: green;
+}
+
+.wait-status {
+  color: chocolate;
+}

@@ -8,6 +8,7 @@ import styles from './styles.css';
 const App = (): JSX.Element => {
   const [showContent, setShowContent] = useState<boolean>(false);
   const [showLoading, setShowLoading] = useState<boolean>(true);
+  const [isClear, setIsClear] = useState<boolean>(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -16,16 +17,18 @@ const App = (): JSX.Element => {
   }, []);
 
   return (
-    <div className={styles.app}>
+    <>
       {showLoading && <FakeLoading />}
-      {!showLoading && <FakeTerminal onDone={setShowContent} />}
-      {showContent && (
-        <>
-          <Greeting />
-          <Terminal />
-        </>
-      )}
-    </div>
+      <div className={styles.app}>
+        {!showLoading && !isClear && <FakeTerminal onDone={setShowContent} />}
+        {showContent && (
+          <>
+            {!isClear && <Greeting />}
+            <Terminal onClear={setIsClear} />
+          </>
+        )}
+      </div>
+    </>
   );
 };
 
