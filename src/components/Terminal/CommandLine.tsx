@@ -1,11 +1,12 @@
 import React, { useState, KeyboardEvent, useRef, useContext, useEffect } from 'react';
 import TerminalContext from './TerminalContext';
 import Prompt from '../FakeTerminal/Prompt';
-import catAutocompleteFileNames from './catAutocompleteFileNames';
+import { catAutocompleteFileNames, IAutocompleteResult } from './catAutocompleteFileNames';
 import styles from './styles.css';
 
 interface IProp {
   onInput: (text: string) => void;
+  setCustomResult: (command: string, output: () => JSX.Element) => void;
 }
 
 const CommandLine = (props: IProp): JSX.Element => {
@@ -14,6 +15,7 @@ const CommandLine = (props: IProp): JSX.Element => {
   const inputElement = useRef<HTMLInputElement>(null);
   const { commandHistory } = useContext(TerminalContext);
   const [previousCommandIndex, setPreviousCommandIndex] = useState<number | null>(null);
+  const [tabKeyPressTime, setTabKeyPressTime] = useState<number>(0);
 
   const ENTER_KEY = 13;
   const ARROW_UP_KEY = 38;
@@ -81,12 +83,25 @@ const CommandLine = (props: IProp): JSX.Element => {
       }
       case TAB_KEY: {
         event.preventDefault();
-        const result: string = catAutocompleteFileNames(text);
 
-        if (result !== '') {
-          setInputCommand(result);
+        let output: IAutocompleteResult = catAutocompleteFileNames(text);
+        const delta = 500;
+        const pressTime = new Date().getTime();
+
+        if (output.result !== '' && !output.isSomeMatches) {
+          setInputCommand(output.result);
+        } else if (output.result !== '' && output.isSomeMatches) {
+          if (tabKeyPressTime !== 0 && pressTime - tabKeyPressTime <= delta) {
+            const customResult = (
+              <div>
+                <p>{output.result}</p>
+              </div>
+            );
+
+            props.setCustomResult(text, () => customResult);
+          }
         }
-
+        setTabKeyPressTime(pressTime);
         break;
       }
     }

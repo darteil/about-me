@@ -1,12 +1,21 @@
 const command = 'cat ';
-const files = ['projects.txt', 'contacts.txt', 'about.txt'];
+const files = ['projects.txt', 'contacts.txt', 'about.txt', 'professional-skills.txt'];
 
-const catAutocompleteFileNames = (text: string): string => {
-  if (text.indexOf(command) !== 0) return '';
+interface IAutocompleteResult {
+  result: string;
+  isSomeMatches: boolean;
+}
+
+const catAutocompleteFileNames = (text: string): IAutocompleteResult => {
+  let result: IAutocompleteResult = {
+    result: '',
+    isSomeMatches: false,
+  };
+
+  if (text.indexOf(command) !== 0) return result;
 
   const str = text.replace(command, '');
   const matches: string[] = [];
-  let result = '';
 
   files.forEach((file: string) => {
     if (file.indexOf(str) === 0) {
@@ -15,12 +24,22 @@ const catAutocompleteFileNames = (text: string): string => {
   });
 
   if (matches.length > 0 && matches.length < 2) {
-    result = matches[0];
+    result = {
+      result: `${command}${matches[0]}`,
+      isSomeMatches: false,
+    };
   } else {
-    return '';
+    let str = '';
+    matches.forEach((command: string) => {
+      str = `${str} ${command}`;
+    });
+    result = {
+      result: str,
+      isSomeMatches: true,
+    };
   }
 
-  return `${command}${result}`;
+  return result;
 };
 
-export default catAutocompleteFileNames;
+export { catAutocompleteFileNames, IAutocompleteResult };

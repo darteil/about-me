@@ -17,7 +17,7 @@ const CommandBlock = (props: IProp): JSX.Element => {
 
   return (
     <>
-      <CommandLine onInput={pushCommand} />
+      <CommandLine onInput={pushCommand} setCustomResult={props.push} />
       <div>{result}</div>
     </>
   );
