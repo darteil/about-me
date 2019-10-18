@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Dispatch, SetStateAction } from 'react';
 import ReactDOM from 'react-dom';
 import TerminalContext from './TerminalContext';
 import CommandBlock from './CommandBlock';
@@ -7,7 +7,11 @@ import Chat from '../Chat';
 import Commands from './CommandProcessing/commands';
 import generateUniqueId from './generateUniqueId';
 
-const Terminal = (): JSX.Element => {
+interface IProps {
+  onClear: Dispatch<SetStateAction<boolean>>;
+}
+
+const Terminal = (props: IProps): JSX.Element => {
   const [history, setHistory] = useState<IHistory[]>([]);
   const [showChat, setShowChat] = useState<boolean>(false);
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
@@ -34,6 +38,7 @@ const Terminal = (): JSX.Element => {
     if (command === commands.clear) {
       setHistory([]);
       addNewCommandToHistory(commands.clear);
+      props.onClear(true);
     } else if (command === commands.chat) {
       setShowChat(true);
       saveCommand();
