@@ -25,6 +25,7 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.css$/,
+          exclude: /node_modules/,
           use: [
             devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
@@ -34,6 +35,20 @@ module.exports = (env, argv) => {
                 importLoaders: 1,
                 localIdentName: '[path][name]__[local]__[hash:base64:5]',
                 modules: true,
+              },
+            },
+          ],
+        },
+        {
+          test: /\.css$/,
+          include: /node_modules/,
+          use: [
+            devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+            {
+              loader: 'css-loader',
+              options: {
+                url: false,
+                importLoaders: 1,
               },
             },
           ],
