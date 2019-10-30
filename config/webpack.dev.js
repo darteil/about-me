@@ -16,7 +16,7 @@ module.exports = (env, argv) =>
       proxy: [
         {
           context: ['/api'],
-          target: 'http://localhost:443',
+          target: 'http://localhost:3000',
           pathRewrite: { '^/api': '' },
         },
       ],

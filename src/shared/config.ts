@@ -1,5 +1,4 @@
 class Config {
-  public websocketUrl = 'ws://localhost:443';
   public apiUrl = '/api';
 }
 

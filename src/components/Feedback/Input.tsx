@@ -22,9 +22,13 @@ const Input = (props: IProp): JSX.Element => {
   const formats = ['header', 'bold', 'italic', 'underline', 'strike', 'list', 'bullet', 'indent', 'link'];
 
   const sendMessage = () => {
-    APIService.sendMessage(text).catch(error => {
-      console.warn(error);
-    });
+    APIService.sendMessage(text)
+      .then(() => {
+        props.onClose();
+      })
+      .catch(error => {
+        console.warn(error);
+      });
   };
 
   const handleChange = (value: string) => {
@@ -33,7 +37,6 @@ const Input = (props: IProp): JSX.Element => {
 
   return (
     <div className={styles.feedback}>
-      <h3>Здесь вы можете оставить сообщение для меня...</h3>
       <ReactQuill value={text} onChange={handleChange} modules={modules} formats={formats} />
       <div className={styles.buttons}>
         <button onClick={sendMessage}>Отправить</button>
