@@ -1,5 +1,5 @@
 class Config {
-  public websocketUrl = 'ws://darteil-projects.ru:443';
-  public apiUrl = 'http://darteil-projects.ru/chat';
+  public apiUrl = 'http://darteil-projects.ru/messages';
 }
+
 export default new Config();

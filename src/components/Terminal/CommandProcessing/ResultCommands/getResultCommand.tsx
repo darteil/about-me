@@ -43,7 +43,7 @@ const getResultCommand = (command: string): (() => JSX.Element) => {
     case commands.clear: {
       return empty;
     }
-    case commands.chat: {
+    case commands.feedback: {
       return empty;
     }
     case '': {

@@ -2,8 +2,8 @@ import axios, { AxiosPromise } from 'axios';
 import Config from '../config';
 
 class APIService {
-  public getLastMessages(): AxiosPromise<any> {
-    return axios.get(`${Config.apiUrl}/messages/last`);
+  public sendMessage(text: string): AxiosPromise<any> {
+    return axios.post(`${Config.apiUrl}/messages/`, { text });
   }
 }
 
