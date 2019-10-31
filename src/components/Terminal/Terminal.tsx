@@ -39,10 +39,10 @@ const Terminal = (props: IProps): JSX.Element => {
       setHistory([]);
       addNewCommandToHistory(commands.clear);
       props.onClear(true);
-    } /*else if (command === commands.feedback) {
+    } else if (command === commands.feedback) {
       setShowFeedback(true);
       saveCommand();
-    }*/ else {
+    } else {
       saveCommand();
     }
   };

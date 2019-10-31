@@ -43,9 +43,9 @@ const getResultCommand = (command: string): (() => JSX.Element) => {
     case commands.clear: {
       return empty;
     }
-    /*case commands.feedback: {
+    case commands.feedback: {
       return empty;
-    }*/
+    }
     case '': {
       return empty;
     }
