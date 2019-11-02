@@ -1,7 +1,7 @@
 body {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: courier, monospace;
   font-size: 14px;
-  background-color: #222222;
-  color: #c6a57b;
+  background-color: #000;
+  color: #fff;
   padding: 5px;
 }

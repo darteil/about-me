@@ -11,26 +11,29 @@
   margin-left: auto;
   margin-right: auto;
   z-index: 2;
-  background-color: #222222;
+  background-color: #000;
 }
 
 .feedback button {
   width: 200px;
   height: 30px;
   font-size: 14px;
+  color: #fff;
   outline: none;
   border: none;
-  background-color: green;
+  background-color: #000;
+  border: 1px solid #fff;
 }
 
 .feedback button:hover {
-  background-color: azure;
+  background-color: #fff;
   cursor: pointer;
+  color: #000;
 }
 
 .buttons {
   z-index: 3;
-  border-top: 1px solid #5a7c0b;
+  border-top: 1px solid #fff;
   padding: 5px;
 }
 
