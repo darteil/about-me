@@ -1,7 +1,7 @@
-html[data-theme='default'] {
+html[data-theme='light'] {
   /* global */
-  --primaryBg: #000;
-  --primaryColor: #fff;
+  --primaryBg: #fff;
+  --primaryColor: #000;
   --linksColor: rgb(189, 95, 27);
 
   /* Fake loader */
@@ -15,19 +15,19 @@ html[data-theme='default'] {
   --inputBackground: #000;
 
   /* Feedback component */
-  --feedbackBackground: #000;
-  --feedbackBorder: #fff;
-  --feedbackColor: #fff;
+  --feedbackBackground: #fff;
+  --feedbackBorder: #000;
+  --feedbackColor: #000;
 
-  --feedbackIconColor: #fff;
+  --feedbackIconColor: #000;
   --feedbackIconHover: #0f0;
 
-  --feedbackButtonBackground: #000;
-  --feedbackButtonBorder: #fff;
-  --feedbackButtonColor: #fff;
-  --feedbackButtonBackgroundHover: #fff;
-  --feedbackButtonBorderHover: #fff;
-  --feedbackButtonColorHover: #000;
+  --feedbackButtonBackground: #fff;
+  --feedbackButtonBorder: #000;
+  --feedbackButtonColor: #000;
+  --feedbackButtonBackgroundHover: #000;
+  --feedbackButtonBorderHover: #000;
+  --feedbackButtonColorHover: #fff;
 
   /* professional skills output */
   --profSkillsComplete: green;

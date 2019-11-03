@@ -7,6 +7,10 @@ class Commands {
   public catSkills: string = 'cat professional-skills.txt';
   public clear: string = 'clear';
   public feedback: string = 'feedback';
+
+  /* themes */
+  public switchThemeLight: string = 'switch theme light';
+  public switchThemeDefault: string = 'switch theme default';
 }
 
 export default Commands;

@@ -11,6 +11,18 @@
   color: var(--primaryColor);
 }
 
+.help ul {
+  list-style: none;
+}
+
+.help ul.title {
+  font-weight: bold;
+}
+
+.help .themes-list {
+  padding-left: 25px;
+}
+
 .projects,
 .contacts {
   display: flex;
