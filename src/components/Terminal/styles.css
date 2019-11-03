@@ -5,10 +5,22 @@
 
 .command-line input {
   width: 410px;
-  background-color: #222222;
+  background-color: var(--primaryBg);
   outline: none;
   border: none;
-  color: #c6a57b;
+  color: var(--primaryColor);
+}
+
+.help ul {
+  list-style: none;
+}
+
+.help ul.title {
+  font-weight: bold;
+}
+
+.help .themes-list {
+  padding-left: 25px;
 }
 
 .projects,
@@ -23,7 +35,7 @@
 
 .projects a,
 .contacts a {
-  color: rgb(189, 95, 27);
+  color: var(--linksColor);
 }
 
 .projects a:hover,
@@ -44,9 +56,9 @@
 }
 
 .complete-status {
-  color: green;
+  color: var(--profSkillsComplete);
 }
 
 .wait-status {
-  color: chocolate;
+  color: var(--profSkillsWait);
 }

@@ -11,26 +11,29 @@
   margin-left: auto;
   margin-right: auto;
   z-index: 2;
-  background-color: #222222;
+  background-color: var(--feedbackButtonBackground);
 }
 
 .feedback button {
   width: 200px;
   height: 30px;
   font-size: 14px;
+  color: var(--feedbackButtonColor);
   outline: none;
-  border: none;
-  background-color: green;
+  background-color: var(--buttonBackground);
+  border: 1px solid var(--feedbackButtonBorder);
 }
 
 .feedback button:hover {
-  background-color: azure;
+  background-color: var(--feedbackButtonBackgroundHover);
+  border: 1px solid var(--feedbackButtonBorderHover);
   cursor: pointer;
+  color: var(--feedbackButtonColorHover);
 }
 
 .buttons {
   z-index: 3;
-  border-top: 1px solid #5a7c0b;
+  border-top: 1px solid var(--feedbackBorder);
   padding: 5px;
 }
 

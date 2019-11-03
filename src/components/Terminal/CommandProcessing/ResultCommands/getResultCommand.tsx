@@ -46,6 +46,12 @@ const getResultCommand = (command: string): (() => JSX.Element) => {
     case commands.feedback: {
       return empty;
     }
+    case commands.switchThemeDefault: {
+      return empty;
+    }
+    case commands.switchThemeLight: {
+      return empty;
+    }
     case '': {
       return empty;
     }

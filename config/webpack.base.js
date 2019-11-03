@@ -4,6 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const indexFilePath = path.resolve(__dirname, '../src/index.tsx');
 
+const stylesNotIncludedInModules = [/node_modules/, path.resolve(__dirname, '../src/globalStyles/')];
+
 module.exports = (env, argv) => {
   const devMode = argv.mode !== 'production';
 
@@ -25,7 +27,7 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.css$/,
-          exclude: /node_modules/,
+          exclude: stylesNotIncludedInModules,
           use: [
             devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
@@ -41,7 +43,7 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.css$/,
-          include: /node_modules/,
+          include: stylesNotIncludedInModules,
           use: [
             devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
             {

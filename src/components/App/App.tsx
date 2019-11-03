@@ -16,6 +16,11 @@ const App = (): JSX.Element => {
     }, 3000);
   }, []);
 
+  useEffect(() => {
+    const currentTheme = localStorage.getItem('darteil_projects_theme');
+    document.documentElement.setAttribute('data-theme', currentTheme || 'default');
+  }, []);
+
   return (
     <>
       {showLoading && <FakeLoading />}

@@ -1,0 +1,11 @@
+@import url('default-theme.css');
+@import url('light-theme.css');
+@import url('quill_theme.css');
+
+body {
+  font-family: courier, monospace;
+  font-size: 14px;
+  background-color: var(--primaryBg);
+  color: var(--primaryColor);
+  padding: 5px;
+}
