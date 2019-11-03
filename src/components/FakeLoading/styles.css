@@ -8,15 +8,15 @@
 }
 
 .ok-indicator {
-  color: #0f0;
+  color: var(--okIndicator);
 }
 
 .wait-indicator {
-  color: coral;
+  color: var(--waitIndicator);
 }
 
 .spinner {
-  color: dodgerblue;
+  color: var(--spinnerColor);
   font-weight: bolder;
   font-size: 18px;
 }

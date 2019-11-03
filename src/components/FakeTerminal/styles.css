@@ -7,9 +7,9 @@
 }
 
 .user {
-  color: #0f0;
+  color: var(--userInfo);
 }
 
 .path {
-  color: royalblue;
+  color: var(--pathInfo);
 }
