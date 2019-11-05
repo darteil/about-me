@@ -62,3 +62,15 @@
 .wait-status {
   color: var(--profSkillsWait);
 }
+
+.experience {
+  margin: 10px 0;
+}
+
+.experience a {
+  color: var(--linksColor);
+}
+
+.experience .company-title {
+  margin-bottom: 5px;
+}

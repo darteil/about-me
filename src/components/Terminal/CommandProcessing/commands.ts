@@ -5,6 +5,7 @@ class Commands {
   public catProjects: string = 'cat projects.txt';
   public catContacts: string = 'cat contacts.txt';
   public catSkills: string = 'cat professional-skills.txt';
+  public catWorkExperience: string = 'cat work-experience.txt';
   public clear: string = 'clear';
   public feedback: string = 'feedback';
 

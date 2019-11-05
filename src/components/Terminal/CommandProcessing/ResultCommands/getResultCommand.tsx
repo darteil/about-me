@@ -5,6 +5,7 @@ import Projects from './Projects';
 import Contacts from './Contacts';
 import Ls from './Ls';
 import Skills from './Skills';
+import Experience from './Experience';
 import Commands from '../commands';
 
 const getResultCommand = (command: string): (() => JSX.Element) => {
@@ -33,6 +34,9 @@ const getResultCommand = (command: string): (() => JSX.Element) => {
     }
     case commands.catSkills: {
       return Skills;
+    }
+    case commands.catWorkExperience: {
+      return Experience;
     }
     case commands.ls: {
       return Ls;
