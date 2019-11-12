@@ -8,7 +8,9 @@ interface IProp {
 }
 
 const Input = (props: IProp): JSX.Element => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState<string>('');
+  const [messageSend, setMessageSend] = useState<boolean>(false);
+  const [sendError, setSendError] = useState<boolean>(false);
 
   const modules = {
     toolbar: [
@@ -24,10 +26,11 @@ const Input = (props: IProp): JSX.Element => {
   const sendMessage = () => {
     APIService.sendMessage(text)
       .then(() => {
-        props.onClose();
+        setMessageSend(true);
       })
       .catch(error => {
-        console.warn(error);
+        setMessageSend(true);
+        setSendError(true);
       });
   };
 
@@ -35,13 +38,38 @@ const Input = (props: IProp): JSX.Element => {
     setText(value);
   };
 
+  const handleSuccess = () => {
+    if (sendError) {
+      setMessageSend(false);
+      setSendError(false);
+    } else {
+      props.onClose();
+    }
+  };
+
   return (
     <div className={styles.feedback}>
-      <ReactQuill value={text} onChange={handleChange} modules={modules} formats={formats} />
-      <div className={styles.buttons}>
-        <button onClick={sendMessage}>Отправить</button>
-        <button onClick={props.onClose}>Закрыть</button>
-      </div>
+      {messageSend && (
+        <div className={styles['send-success']}>
+          {!sendError && <p>Ваше сообщение отправлено</p>}
+          {sendError && (
+            <>
+              <p>При отправке сообщения возникла ошибка</p>
+              <p>Попробуйте еще раз</p>
+            </>
+          )}
+          <button onClick={handleSuccess}>Хорошо</button>
+        </div>
+      )}
+      {!messageSend && (
+        <>
+          <ReactQuill value={text} onChange={handleChange} modules={modules} formats={formats} />
+          <div className={styles.buttons}>
+            <button onClick={sendMessage}>Отправить</button>
+            <button onClick={props.onClose}>Закрыть</button>
+          </div>
+        </>
+      )}
     </div>
   );
 };
