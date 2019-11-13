@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ReactQuill, { Quill } from 'react-quill';
+import SuccessMessage from './SuccessMessage';
 import APIService from '../../shared/APIService';
 import styles from './styles.css';
 
@@ -28,7 +29,7 @@ const Input = (props: IProp): JSX.Element => {
       .then(() => {
         setMessageSend(true);
       })
-      .catch(error => {
+      .catch(() => {
         setMessageSend(true);
         setSendError(true);
       });
@@ -49,18 +50,7 @@ const Input = (props: IProp): JSX.Element => {
 
   return (
     <div className={styles.feedback}>
-      {messageSend && (
-        <div className={styles['send-success']}>
-          {!sendError && <p>Ваше сообщение отправлено</p>}
-          {sendError && (
-            <>
-              <p>При отправке сообщения возникла ошибка</p>
-              <p>Попробуйте еще раз</p>
-            </>
-          )}
-          <button onClick={handleSuccess}>Хорошо</button>
-        </div>
-      )}
+      {messageSend && <SuccessMessage hasError handlerClickSuccess={handleSuccess} />}
       {!messageSend && (
         <>
           <ReactQuill value={text} onChange={handleChange} modules={modules} formats={formats} />
