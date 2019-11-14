@@ -13,7 +13,6 @@ module.exports = (env, argv) => {
   let publicPath = '';
 
   return merge(base(env, argv), {
-    devtool: 'source-map',
     stats: 'errors-only',
     output: {
       path: distPath,
