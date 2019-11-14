@@ -50,7 +50,7 @@ const Input = (props: IProp): JSX.Element => {
 
   return (
     <div className={styles.feedback}>
-      {messageSend && <SuccessMessage hasError handlerClickSuccess={handleSuccess} />}
+      {messageSend && <SuccessMessage hasError={sendError} handlerClickSuccess={handleSuccess} />}
       {!messageSend && (
         <>
           <ReactQuill value={text} onChange={handleChange} modules={modules} formats={formats} />
