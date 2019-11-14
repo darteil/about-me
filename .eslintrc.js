@@ -8,7 +8,7 @@ module.exports = {
   ],
   rules: {
     'linebreak-style': ['error', 'unix'],
-    '@typescript-eslint/interface-name-prefix': ['always'],
+    '@typescript-eslint/interface-name-prefix': 1,
     '@typescript-eslint/no-explicit-any': 0,
     'prettier/prettier': 'error',
   },

@@ -1,29 +1,32 @@
 import React from 'react';
 import styles from '../../styles.css';
 
+const CompleteStatus = () => <span className={styles['complete-status']}>✔️</span>;
+const WaitStatus = () => <span className={styles['wait-status']}>●</span>;
+
 const Skills = (): JSX.Element => (
   <div className={styles.skills}>
     <ul>
       <li>
-        HTML <span className={styles['complete-status']}>✔️</span>
+        HTML <CompleteStatus />
       </li>
       <li>
-        CSS <span className={styles['complete-status']}>✔️</span>
+        CSS <CompleteStatus />
       </li>
       <li>
-        React <span className={styles['complete-status']}>✔️</span>
+        React <CompleteStatus />
       </li>
       <li>
-        Redux <span className={styles['complete-status']}>✔️</span>
+        Redux <CompleteStatus />
       </li>
       <li>
-        Webpack <span className={styles['complete-status']}>✔️</span>
+        Webpack <CompleteStatus />
       </li>
       <li>
-        Gulp <span className={styles['complete-status']}>✔️</span>
+        Gulp <CompleteStatus />
       </li>
       <li>
-        TypeScript <span className={styles['wait-status']}>●</span> (знаком с ним, но нет опыта коммерческой разработки)
+        TypeScript <WaitStatus /> (знаком с ним, но нет опыта коммерческой разработки)
       </li>
     </ul>
   </div>

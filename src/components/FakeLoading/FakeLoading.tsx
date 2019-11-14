@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Loader from './Loader';
 import styles from './styles.css';
 
@@ -11,25 +11,21 @@ const packagesList: string[] = [
   'socket.io-client (2.2.0)...',
 ];
 
-const FakeLoading = (): JSX.Element => {
-  const [index, setIndex] = useState<number>(0);
-
-  return (
-    <div className={styles['packages-list']}>
-      <ul>
-        {packagesList.map(
-          (packageItem: string): JSX.Element => (
-            <li key={packageItem}>
-              [ <span className={styles['ok-indicator']}>ok</span> ] {packageItem}
-            </li>
-          ),
-        )}
-        <li key="starting" className={styles.starting}>
-          [ <span className={styles['wait-indicator']}>wait</span> ] Starting app <Loader />
-        </li>
-      </ul>
-    </div>
-  );
-};
+const FakeLoading = (): JSX.Element => (
+  <div className={styles['packages-list']}>
+    <ul>
+      {packagesList.map(
+        (packageItem: string): JSX.Element => (
+          <li key={packageItem}>
+            [ <span className={styles['ok-indicator']}>ok</span> ] {packageItem}
+          </li>
+        ),
+      )}
+      <li key="starting" className={styles.starting}>
+        [ <span className={styles['wait-indicator']}>wait</span> ] Starting app <Loader />
+      </li>
+    </ul>
+  </div>
+);
 
 export default FakeLoading;
