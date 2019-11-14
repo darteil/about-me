@@ -1,17 +1,17 @@
 class Commands {
-  public about: string = 'cat about.txt';
-  public help: string = 'help';
-  public ls: string = 'ls';
-  public catProjects: string = 'cat projects.txt';
-  public catContacts: string = 'cat contacts.txt';
-  public catSkills: string = 'cat professional-skills.txt';
-  public catWorkExperience: string = 'cat work-experience.txt';
-  public clear: string = 'clear';
-  public feedback: string = 'feedback';
+  public about = 'cat about.txt';
+  public help = 'help';
+  public ls = 'ls';
+  public catProjects = 'cat projects.txt';
+  public catContacts = 'cat contacts.txt';
+  public catSkills = 'cat professional-skills.txt';
+  public catWorkExperience = 'cat work-experience.txt';
+  public clear = 'clear';
+  public feedback = 'feedback';
 
   /* themes */
-  public switchThemeLight: string = 'switch theme light';
-  public switchThemeDefault: string = 'switch theme default';
+  public switchThemeLight = 'switch theme light';
+  public switchThemeDefault = 'switch theme default';
 }
 
 export default Commands;

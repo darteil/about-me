@@ -14,10 +14,6 @@ const getResultCommand = (command: string): (() => JSX.Element) => {
   const empty = (): JSX.Element => <></>;
   const notFound = (): JSX.Element => <div>{`${command}: command not found`}</div>;
 
-  if (trimCommand === 'exit') {
-    window.close();
-  }
-
   if (!trimCommand.length) {
     return empty;
   }
