@@ -14,6 +14,7 @@ const Help = (): JSX.Element => (
           <ul>
             <li>-default</li>
             <li>-light</li>
+            <li>-solarized</li>
           </ul>
         </li>
       </ul>

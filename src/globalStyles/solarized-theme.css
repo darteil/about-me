@@ -1,0 +1,35 @@
+html[data-theme='solarized'] {
+  /* global */
+  --primaryBg: #002a35;
+  --primaryColor: #839496;
+  --linksColor: #cb4b16;
+
+  /* Fake loader */
+  --spinnerColor: #268bd2;
+  --okIndicator: #859900;
+  --waitIndicator: #cb4b16;
+
+  /* Command line */
+  --userInfo: #859900;
+  --pathInfo: #268bd2;
+  --inputBackground: #002a35;
+
+  /* Feedback component */
+  --feedbackBackground: #002a35;
+  --feedbackBorder: #839496;
+  --feedbackColor: #839496;
+
+  --feedbackIconColor: #839496;
+  --feedbackIconHover: #859900;
+
+  --feedbackButtonBackground: #002a35;
+  --feedbackButtonBorder: #839496;
+  --feedbackButtonColor: #839496;
+  --feedbackButtonBackgroundHover: #839496;
+  --feedbackButtonBorderHover: #839496;
+  --feedbackButtonColorHover: #000;
+
+  /* professional skills output */
+  --profSkillsComplete: green;
+  --profSkillsWait: chocolate;
+}

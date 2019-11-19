@@ -12,6 +12,7 @@ class Commands {
   /* themes */
   public switchThemeLight = 'switch theme light';
   public switchThemeDefault = 'switch theme default';
+  public switchThemeSolarized = 'switch theme solarized';
 }
 
 export default Commands;

@@ -52,6 +52,9 @@ const getResultCommand = (command: string): (() => JSX.Element) => {
     case commands.switchThemeLight: {
       return empty;
     }
+    case commands.switchThemeSolarized: {
+      return empty;
+    }
     case '': {
       return empty;
     }
