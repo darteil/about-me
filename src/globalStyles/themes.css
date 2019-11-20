@@ -1,0 +1,108 @@
+/*-------------------------------------------*\
+  Global
+  --primaryBg
+  --primaryColor
+  --linksColor
+
+  Fake loader
+  --spinnerColor
+  --okIndicator
+  --waitIndicator
+
+  Command line
+  --userInfo
+  --pathInfo
+  --inputBackground
+
+  Feedback component
+  --feedbackBackground
+  --feedbackBorder
+  --feedbackColor
+  --feedbackIconColor
+  --feedbackIconHover
+  --feedbackButtonBackground
+  --feedbackButtonBorder
+  --feedbackButtonColor
+  --feedbackButtonBackgroundHover
+  --feedbackButtonBorderHover
+  --feedbackButtonColorHover
+
+  Professional skills output
+  --profSkillsComplete
+  --profSkillsWait
+\*-------------------------------------------*/
+
+html[data-theme='default'] {
+  --primaryBg: #000;
+  --primaryColor: #fff;
+  --linksColor: rgb(189, 95, 27);
+  --spinnerColor: dodgerblue;
+  --okIndicator: #0f0;
+  --waitIndicator: coral;
+  --userInfo: #0f0;
+  --pathInfo: royalblue;
+  --inputBackground: #000;
+  --feedbackBackground: #000;
+  --feedbackBorder: #fff;
+  --feedbackColor: #fff;
+  --feedbackIconColor: #fff;
+  --feedbackIconHover: #0f0;
+  --feedbackButtonBackground: #000;
+  --feedbackButtonBorder: #fff;
+  --feedbackButtonColor: #fff;
+  --feedbackButtonBackgroundHover: #fff;
+  --feedbackButtonBorderHover: #fff;
+  --feedbackButtonColorHover: #000;
+  --profSkillsComplete: green;
+  --profSkillsWait: chocolate;
+}
+
+html[data-theme='light'] {
+  --primaryBg: #fff;
+  --primaryColor: #000;
+  --linksColor: rgb(189, 95, 27);
+  --spinnerColor: dodgerblue;
+  --okIndicator: #0f0;
+  --waitIndicator: coral;
+  --userInfo: #0f0;
+  --pathInfo: royalblue;
+  --inputBackground: #000;
+  --feedbackBackground: #fff;
+  --feedbackBorder: #000;
+  --feedbackColor: #000;
+  --feedbackIconColor: #000;
+  --feedbackIconHover: #0f0;
+  --feedbackButtonBackground: #fff;
+  --feedbackButtonBorder: #000;
+  --feedbackButtonColor: #000;
+  --feedbackButtonBackgroundHover: #000;
+  --feedbackButtonBorderHover: #000;
+  --feedbackButtonColorHover: #fff;
+  --profSkillsComplete: green;
+  --profSkillsWait: chocolate;
+}
+
+html[data-theme='solarized'] {
+  --primaryBg: #002a35;
+  --primaryColor: #839496;
+  --linksColor: #cb4b16;
+  --spinnerColor: #268bd2;
+  --okIndicator: #859900;
+  --waitIndicator: #cb4b16;
+  --userInfo: #859900;
+  --pathInfo: #268bd2;
+  --inputBackground: #002a35;
+  --feedbackBackground: #002a35;
+  --feedbackBorder: #839496;
+  --feedbackColor: #839496;
+  --feedbackIconColor: #839496;
+  --feedbackIconHover: #859900;
+  --feedbackButtonBackground: #002a35;
+  --feedbackButtonBorder: #839496;
+  --feedbackButtonColor: #839496;
+  --feedbackButtonBackgroundHover: #839496;
+  --feedbackButtonBorderHover: #839496;
+  --feedbackButtonColorHover: #000;
+  --profSkillsComplete: green;
+  --profSkillsWait: chocolate;
+}
