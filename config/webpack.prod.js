@@ -4,6 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const base = require('./webpack.base');
 
 const distPath = path.resolve(__dirname, '../dist');
@@ -18,6 +20,9 @@ module.exports = (env, argv) => {
       path: distPath,
       filename: 'js/[name].[hash:8].js',
       publicPath: publicPath,
+    },
+    optimization: {
+      minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
     },
     plugins: [
       new WebpackBar(),
