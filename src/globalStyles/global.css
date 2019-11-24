@@ -2,7 +2,7 @@
 @import url('quill_theme.css');
 
 body {
-  font-family: courier, monospace;
+  font-family: monospace;
   font-size: 14px;
   background-color: var(--primaryBg);
   color: var(--primaryColor);
