@@ -10,9 +10,6 @@ const Projects = (): JSX.Element => (
     <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/stack/">
       StackGame
     </a>
-    <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/robots-civ-clicker">
-      RobotsCivClicker
-    </a>
     <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/poe-ladder">
       POELadder
     </a>
