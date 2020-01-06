@@ -8,7 +8,6 @@ const packagesList: string[] = [
   'react-typist (2.0.5)...',
   'axios (0.19.0)...',
   'dayjs-ext (2.2.0)...',
-  'socket.io-client (2.2.0)...',
 ];
 
 const FakeLoading = (): JSX.Element => (
