@@ -14,3 +14,7 @@ Install dependencies and start.
 $ npm install
 $ npm run dev
 ```
+
+## License
+
+MIT License, Copyright (c) 2020 Romanov Yuri
