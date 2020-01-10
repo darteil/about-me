@@ -4,9 +4,6 @@ import styles from '../../styles.css';
 const Contacts = (): JSX.Element => (
   <div className={styles.contacts}>
     <p>
-      Telegram: <a href="tg://resolve?domain=darteil">@darteil</a>
-    </p>
-    <p>
       Skype: <a href="skype:darteil.work?chat">live:darteil.work</a>
     </p>
     <p>
@@ -14,10 +11,10 @@ const Contacts = (): JSX.Element => (
     </p>
     <p>
       <a target="_blank" rel="noopener noreferrer" href="https://moikrug.ru/crazyraccoon">
-        Профиль "Мой круг"
+        Профиль &quot;Мой круг&quot;
       </a>
     </p>
-    <p>Вы так же можете ввести в терминал команду "feedback" и оставить сообщение там</p>
+    <p>Вы так же можете ввести в терминал команду &quot;feedback&quot; и оставить сообщение там</p>
   </div>
 );
 
