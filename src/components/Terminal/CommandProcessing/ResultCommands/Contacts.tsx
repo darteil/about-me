@@ -11,7 +11,7 @@ const Contacts = (): JSX.Element => (
     </p>
     <p>
       <a target="_blank" rel="noopener noreferrer" href="https://moikrug.ru/crazyraccoon">
-        Профиль &quot;Мой круг&quot;
+        Профиль &quot;Хабр Карьера&quot;
       </a>
     </p>
     <p>Вы так же можете ввести в терминал команду &quot;feedback&quot; и оставить сообщение там</p>
