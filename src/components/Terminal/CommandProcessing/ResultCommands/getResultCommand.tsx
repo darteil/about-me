@@ -9,7 +9,6 @@ import Experience from './Experience';
 import Commands from '../commands';
 
 const getResultCommand = (command: string): (() => JSX.Element) => {
-  const commands = new Commands();
   const trimCommand = command.trim();
   const empty = (): JSX.Element => <></>;
   const notFound = (): JSX.Element => <div>{`${command}: command not found`}</div>;
@@ -19,40 +18,40 @@ const getResultCommand = (command: string): (() => JSX.Element) => {
   }
 
   switch (trimCommand) {
-    case commands.about: {
+    case Commands.about: {
       return Greeting;
     }
-    case commands.catProjects: {
+    case Commands.catProjects: {
       return Projects;
     }
-    case commands.catContacts: {
+    case Commands.catContacts: {
       return Contacts;
     }
-    case commands.catSkills: {
+    case Commands.catSkills: {
       return Skills;
     }
-    case commands.catWorkExperience: {
+    case Commands.catWorkExperience: {
       return Experience;
     }
-    case commands.ls: {
+    case Commands.ls: {
       return Ls;
     }
-    case commands.help: {
+    case Commands.help: {
       return Help;
     }
-    case commands.clear: {
+    case Commands.clear: {
       return empty;
     }
-    case commands.feedback: {
+    case Commands.feedback: {
       return empty;
     }
-    case commands.switchThemeDefault: {
+    case Commands.switchThemeDefault: {
       return empty;
     }
-    case commands.switchThemeLight: {
+    case Commands.switchThemeLight: {
       return empty;
     }
-    case commands.switchThemeSolarized: {
+    case Commands.switchThemeSolarized: {
       return empty;
     }
     case '': {

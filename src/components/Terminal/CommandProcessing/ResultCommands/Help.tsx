@@ -6,19 +6,17 @@ const Help = (): JSX.Element => (
     <p>ls - список доступных файлов</p>
     <p>cat [filename] - просмотр файла</p>
     <p>clear - очистка экрана</p>
-    <p>
-      switch theme [theme name] - сменить тему оформления
-      <ul className={styles['themes-list']}>
-        <li className={styles.title}>
-          Доступные темы:
-          <ul>
-            <li>-default</li>
-            <li>-light</li>
-            <li>-solarized</li>
-          </ul>
-        </li>
-      </ul>
-    </p>
+    <p>switch theme [theme name] - сменить тему оформления</p>
+    <ul className={styles['themes-list']}>
+      <li className={styles.title}>
+        Доступные темы:
+        <ul>
+          <li>-default</li>
+          <li>-light</li>
+          <li>-solarized</li>
+        </ul>
+      </li>
+    </ul>
     <p>feedback - оставить сообщение</p>
   </div>
 );

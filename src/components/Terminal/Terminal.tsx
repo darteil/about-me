@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Dispatch, SetStateAction } from 'react';
+import React, { useState, Dispatch, SetStateAction } from 'react';
 import ReactDOM from 'react-dom';
 import TerminalContext from './TerminalContext';
 import CommandBlock from './CommandBlock';
@@ -16,7 +16,6 @@ const Terminal = (props: IProps): JSX.Element => {
   const [history, setHistory] = useState<IHistory[]>([]);
   const [showFeedback, setShowFeedback] = useState<boolean>(false);
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
-  const commands = new Commands();
 
   const feedbackClose = () => {
     setShowFeedback(false);
@@ -36,11 +35,11 @@ const Terminal = (props: IProps): JSX.Element => {
       addNewCommandToHistory(command);
     };
 
-    if (command === commands.clear) {
+    if (command === Commands.clear) {
       setHistory([]);
-      addNewCommandToHistory(commands.clear);
+      addNewCommandToHistory(Commands.clear);
       props.onClear(true);
-    } else if (command === commands.feedback) {
+    } else if (command === Commands.feedback) {
       setShowFeedback(true);
       saveCommand();
     } else if (/^switch theme /i.test(command)) {
