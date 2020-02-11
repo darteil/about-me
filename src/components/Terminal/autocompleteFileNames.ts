@@ -6,7 +6,7 @@ interface IAutocompleteResult {
   isSomeMatches: boolean;
 }
 
-const catAutocompleteFileNames = (text: string): IAutocompleteResult => {
+const autocompleteFileNames = (text: string): IAutocompleteResult => {
   let result: IAutocompleteResult = {
     result: '',
     isSomeMatches: false,
@@ -42,4 +42,4 @@ const catAutocompleteFileNames = (text: string): IAutocompleteResult => {
   return result;
 };
 
-export { catAutocompleteFileNames, IAutocompleteResult };
+export { autocompleteFileNames, IAutocompleteResult };

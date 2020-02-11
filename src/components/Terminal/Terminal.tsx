@@ -1,11 +1,11 @@
 import React, { useState, Dispatch, SetStateAction } from 'react';
 import ReactDOM from 'react-dom';
+import { v1 as uuid } from 'uuid';
 import TerminalContext from './TerminalContext';
 import CommandBlock from './CommandBlock';
 import { History, IHistory } from './History';
 import Feedback from '../Feedback';
 import Commands from './CommandProcessing/commands';
-import generateUniqueId from './generateUniqueId';
 import switchTheme from './switchTheme';
 
 interface IProps {
@@ -31,7 +31,7 @@ const Terminal = (props: IProps): JSX.Element => {
 
   const pushCommand = (command: string, output: () => JSX.Element) => {
     const saveCommand = () => {
-      setHistory([...history, { id: generateUniqueId(), command, output }]);
+      setHistory([...history, { id: uuid(), command, output }]);
       addNewCommandToHistory(command);
     };
 
@@ -56,7 +56,7 @@ const Terminal = (props: IProps): JSX.Element => {
       {showFeedback ? (
         ReactDOM.createPortal(<Feedback onClose={feedbackClose} />, document.body)
       ) : (
-        <CommandBlock push={pushCommand} key={generateUniqueId()} />
+        <CommandBlock push={pushCommand} key={uuid()} />
       )}
     </TerminalContext.Provider>
   );
