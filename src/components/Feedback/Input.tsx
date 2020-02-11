@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ReactQuill, { Quill } from 'react-quill';
+import ReactQuill from 'react-quill';
 import SuccessMessage from './SuccessMessage';
 import APIService from '../../shared/APIService';
 import styles from './styles.css';
