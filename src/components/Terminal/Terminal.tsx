@@ -1,12 +1,13 @@
-import React, { useState, Dispatch, SetStateAction } from 'react';
+import React, { useState, Dispatch, SetStateAction, Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { v1 as uuid } from 'uuid';
 import TerminalContext from './TerminalContext';
 import CommandBlock from './CommandBlock';
 import { History, IHistory } from './History';
-import Feedback from '../Feedback';
 import Commands from './CommandProcessing/commands';
 import switchTheme from './switchTheme';
+
+const Feedback = React.lazy(() => import('../Feedback'));
 
 interface IProps {
   onClear: Dispatch<SetStateAction<boolean>>;
@@ -54,7 +55,12 @@ const Terminal = (props: IProps): JSX.Element => {
     <TerminalContext.Provider value={{ commandHistory }}>
       <History history={history} />
       {showFeedback ? (
-        ReactDOM.createPortal(<Feedback onClose={feedbackClose} />, document.body)
+        ReactDOM.createPortal(
+          <Suspense fallback={<div>Загрузка...</div>}>
+            <Feedback onClose={feedbackClose} />
+          </Suspense>,
+          document.body,
+        )
       ) : (
         <CommandBlock push={pushCommand} key={uuid()} />
       )}
