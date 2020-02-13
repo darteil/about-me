@@ -18,12 +18,12 @@ module.exports = (env, argv) => {
     stats: 'errors-only',
     output: {
       path: distPath,
-      filename: 'js/[name].[hash:8].js',
-      chunkFilename: '[name].chunk.js',
+      filename: 'js/[name].[hash].js',
+      chunkFilename: 'js/[name].[hash].chunk.js',
       publicPath: publicPath,
     },
     optimization: {
-      minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+      minimizer: [new TerserJSPlugin({ extractComments: false }), new OptimizeCSSAssetsPlugin({})],
     },
     plugins: [
       new WebpackBar(),
