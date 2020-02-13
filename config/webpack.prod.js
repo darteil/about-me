@@ -19,6 +19,7 @@ module.exports = (env, argv) => {
     output: {
       path: distPath,
       filename: 'js/[name].[hash:8].js',
+      chunkFilename: '[name].chunk.js',
       publicPath: publicPath,
     },
     optimization: {
