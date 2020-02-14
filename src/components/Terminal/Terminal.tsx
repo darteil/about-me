@@ -6,6 +6,7 @@ import CommandBlock from './CommandBlock';
 import { History, IHistory } from './History';
 import Commands from './CommandProcessing/commands';
 import switchTheme from './switchTheme';
+import FeedbackLoading from '../Feedback/FeedbackLoading';
 
 const Feedback = React.lazy(() => import('../Feedback'));
 
@@ -56,7 +57,7 @@ const Terminal = (props: IProps): JSX.Element => {
       <History history={history} />
       {showFeedback ? (
         ReactDOM.createPortal(
-          <Suspense fallback={<div>Загрузка...</div>}>
+          <Suspense fallback={FeedbackLoading()}>
             <Feedback onClose={feedbackClose} />
           </Suspense>,
           document.body,
