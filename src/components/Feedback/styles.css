@@ -41,6 +41,11 @@
   margin-left: 5px;
 }
 
+.feedback-loader {
+  width: 800px;
+  margin: 10px auto;
+}
+
 .send-success {
   display: flex;
   flex-direction: column;
