@@ -7,7 +7,6 @@ const packagesList: string[] = [
   'ReactDOM (16.8.6)...',
   'react-typist (2.0.5)...',
   'axios (0.19.0)...',
-  'dayjs-ext (2.2.0)...',
 ];
 
 const FakeLoading = (): JSX.Element => (

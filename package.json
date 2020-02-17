@@ -45,7 +45,6 @@
     "@types/react-typist": "^2.0.1",
     "@types/uuid": "^3.4.7",
     "axios": "^0.19.1",
-    "dayjs-ext": "^2.2.0",
     "normalize.css": "^8.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
