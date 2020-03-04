@@ -6,6 +6,7 @@ import Contacts from './Contacts';
 import Ls from './Ls';
 import Skills from './Skills';
 import Experience from './Experience';
+import SudoSu from './SudoSu';
 import Commands from '../commands';
 
 const getResultCommand = (command: string): (() => JSX.Element) => {
@@ -38,6 +39,9 @@ const getResultCommand = (command: string): (() => JSX.Element) => {
     }
     case Commands.help: {
       return Help;
+    }
+    case Commands.sudoSu: {
+      return SudoSu;
     }
     case Commands.clear: {
       return empty;

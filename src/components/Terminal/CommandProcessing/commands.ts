@@ -8,6 +8,7 @@ const Commands = {
   catWorkExperience: 'cat work-experience.txt',
   clear: 'clear',
   feedback: 'feedback',
+  sudoSu: 'sudo su',
 
   /* themes */
   switchThemeLight: 'switch theme light',

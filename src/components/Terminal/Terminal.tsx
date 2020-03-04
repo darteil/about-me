@@ -12,6 +12,7 @@ const Feedback = React.lazy(() => import('../Feedback'));
 
 interface IProps {
   onClear: Dispatch<SetStateAction<boolean>>;
+  clearStatus: boolean;
 }
 
 const Terminal = (props: IProps): JSX.Element => {
@@ -40,13 +41,16 @@ const Terminal = (props: IProps): JSX.Element => {
     if (command === Commands.clear) {
       setHistory([]);
       addNewCommandToHistory(Commands.clear);
-      props.onClear(true);
+      if (!props.clearStatus) props.onClear(true);
     } else if (command === Commands.feedback) {
       setShowFeedback(true);
       saveCommand();
     } else if (/^switch theme /i.test(command)) {
       switchTheme(command);
       saveCommand();
+    } else if (command === Commands.sudoSu) {
+      if (!props.clearStatus) props.onClear(true);
+      setHistory([{ id: uuid(), command, output }]);
     } else {
       saveCommand();
     }

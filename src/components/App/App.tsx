@@ -29,7 +29,7 @@ const App = (): JSX.Element => {
         {showContent && (
           <>
             {!isClear && <Greeting />}
-            <Terminal onClear={setIsClear} />
+            <Terminal clearStatus={isClear} onClear={setIsClear} />
           </>
         )}
       </div>
