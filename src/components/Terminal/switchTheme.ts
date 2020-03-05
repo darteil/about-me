@@ -1,4 +1,4 @@
-import Commands from './CommandProcessing/commands';
+import { Commands } from './CommandProcessing/outputs';
 
 export default function switchTheme(command: string): void {
   switch (command) {

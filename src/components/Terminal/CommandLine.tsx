@@ -13,7 +13,7 @@ const CommandLine = (props: IProp): JSX.Element => {
   const [commandSend, setCommandSend] = useState<boolean>(false);
   const [command, setCommand] = useState<string>('');
   const inputElement = useRef<HTMLInputElement>(null);
-  const { commandHistory } = useContext(TerminalContext);
+  const { commandsHistory } = useContext(TerminalContext);
   const [previousCommandIndex, setPreviousCommandIndex] = useState<number | null>(null);
   const [tabKeyPressTime, setTabKeyPressTime] = useState<number>(0);
 
@@ -30,7 +30,7 @@ const CommandLine = (props: IProp): JSX.Element => {
 
   useEffect(() => {
     if (previousCommandIndex !== null) {
-      setInputCommand(commandHistory[previousCommandIndex]);
+      setInputCommand(commandsHistory[previousCommandIndex]);
     } else {
       setInputCommand('');
     }
@@ -48,17 +48,17 @@ const CommandLine = (props: IProp): JSX.Element => {
         break;
       }
       case ARROW_UP_KEY: {
-        if (previousCommandIndex === null && commandHistory.length !== 0) {
+        if (previousCommandIndex === null && commandsHistory.length !== 0) {
           setPreviousCommandIndex(0);
           break;
         }
 
         if (previousCommandIndex !== null) {
-          if (previousCommandIndex > commandHistory.length - 1) {
+          if (previousCommandIndex > commandsHistory.length - 1) {
             break;
           }
-          if (previousCommandIndex === commandHistory.length - 1) {
-            setPreviousCommandIndex(commandHistory.length - 1);
+          if (previousCommandIndex === commandsHistory.length - 1) {
+            setPreviousCommandIndex(commandsHistory.length - 1);
             break;
           }
           setPreviousCommandIndex(previousCommandIndex + 1);
@@ -75,7 +75,7 @@ const CommandLine = (props: IProp): JSX.Element => {
             setPreviousCommandIndex(null);
             break;
           }
-          if (previousCommandIndex <= commandHistory.length - 1) {
+          if (previousCommandIndex <= commandsHistory.length - 1) {
             setPreviousCommandIndex(previousCommandIndex - 1);
           }
         }

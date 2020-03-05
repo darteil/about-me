@@ -1,11 +1,11 @@
 import React from 'react';
 
 type TerminalContext = {
-  commandHistory: string[];
+  commandsHistory: string[];
 };
 
 const TerminalContext = React.createContext<TerminalContext>({
-  commandHistory: [],
+  commandsHistory: [],
 });
 
 export default TerminalContext;

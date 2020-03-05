@@ -4,7 +4,7 @@ import { v1 as uuid } from 'uuid';
 import TerminalContext from './TerminalContext';
 import CommandBlock from './CommandBlock';
 import { History, IHistory } from './History';
-import Commands from './CommandProcessing/commands';
+import { Commands } from './CommandProcessing/outputs';
 import switchTheme from './switchTheme';
 import FeedbackLoading from '../Feedback/FeedbackLoading';
 
@@ -18,15 +18,15 @@ interface IProps {
 const Terminal = (props: IProps): JSX.Element => {
   const [history, setHistory] = useState<IHistory[]>([]);
   const [showFeedback, setShowFeedback] = useState<boolean>(false);
-  const [commandHistory, setCommandHistory] = useState<string[]>([]);
+  const [commandsHistory, setCommandsHistory] = useState<string[]>([]);
 
   const feedbackClose = () => {
     setShowFeedback(false);
   };
 
   const addNewCommandToHistory = (command: string) => {
-    if (!commandHistory.includes(command)) {
-      setCommandHistory((prevState: string[]) => {
+    if (!commandsHistory.includes(command)) {
+      setCommandsHistory((prevState: string[]) => {
         return [command, ...prevState];
       });
     }
@@ -51,13 +51,15 @@ const Terminal = (props: IProps): JSX.Element => {
     } else if (command === Commands.sudoSu) {
       if (!props.clearStatus) props.onClear(true);
       setHistory([{ id: uuid(), command, output }]);
+    } else if (/^ *$/.test(command)) {
+      setHistory([...history]);
     } else {
       saveCommand();
     }
   };
 
   return (
-    <TerminalContext.Provider value={{ commandHistory }}>
+    <TerminalContext.Provider value={{ commandsHistory }}>
       <History history={history} />
       {showFeedback ? (
         ReactDOM.createPortal(
