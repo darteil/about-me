@@ -5,7 +5,11 @@ const Experience = (): JSX.Element => {
   return (
     <div className={styles.experience}>
       <div className={styles['company-title']}>
-        <a target="_blank" rel="noopener noreferrer" href="https://goo.gl/maps/Dqq1Z66bTqwgxQpT6">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://2gis.ru/tomsk/search/%D0%B3%D0%B5%D0%BE%D1%81?m=84.982228%2C56.464483%2F16.34"
+        >
           GEOS
         </a>
       </div>
