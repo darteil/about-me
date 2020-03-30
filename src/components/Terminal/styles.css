@@ -47,8 +47,8 @@
   display: flex;
 }
 
-.ls > div {
-  margin-right: 10px;
+.ls p > span {
+  margin-right: 20px;
 }
 
 .skills ul {

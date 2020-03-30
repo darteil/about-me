@@ -3,7 +3,13 @@ import styles from '../../styles.css';
 
 const Ls = (): JSX.Element => (
   <div className={styles.ls}>
-    <p>professional-skills.txt projects.txt contacts.txt about.txt work-experience.txt</p>
+    <p>
+      <span>professional-skills.txt</span>
+      <span>projects.txt</span>
+      <span>contacts.txt</span>
+      <span>about.txt</span>
+      <span>work-experience.txt</span>
+    </p>
   </div>
 );
 
