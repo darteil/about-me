@@ -7,6 +7,9 @@ const Projects = (): JSX.Element => (
     <a target="_blank" rel="noopener noreferrer" href="https://github.com/darteil/darteil-projects.ru">
       darteil-projects.ru (source code)
     </a>
+    <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/maze-game/">
+      MazeGame
+    </a>
     <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/stack/">
       StackGame
     </a>
