@@ -1,28 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { createGlobalStyle } from 'styled-components';
-import { normalize } from 'styled-normalize';
+import { ThemeProvider } from 'styled-components';
 import FakeTerminal from '../FakeTerminal';
 import Terminal from '../Terminal';
 import Greeting from '../Terminal/CommandProcessing/ResultCommands/Greeting';
 import FakeLoading from '../FakeLoading';
+import { Theme, themes } from '../../themes';
+import { GlobalStyle } from '../../globalStyle';
 import styles from './styles.css';
-
-export const GlobalStyle = createGlobalStyle`
-  ${normalize}
-
-  body {
-    font-family: monospace;
-    font-size: 14px;
-    background-color: var(--primaryBg);
-    color: var(--primaryColor);
-    padding: 5px;
-  }
-`;
 
 const App = (): JSX.Element => {
   const [showContent, setShowContent] = useState<boolean>(false);
   const [showLoading, setShowLoading] = useState<boolean>(true);
   const [isClear, setIsClear] = useState<boolean>(false);
+  const [theme, setTheme] = useState<Theme>(themes.default);
 
   useEffect(() => {
     setTimeout(() => {
@@ -35,8 +25,12 @@ const App = (): JSX.Element => {
     document.documentElement.setAttribute('data-theme', currentTheme || 'default');
   }, []);
 
+  const toggleTheme = (themeName: keyof typeof themes) => {
+    setTheme(themes[themeName]);
+  };
+
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       {showLoading && <FakeLoading />}
       <div className={styles.app}>
@@ -48,7 +42,14 @@ const App = (): JSX.Element => {
           </>
         )}
       </div>
-    </>
+      <button
+        onClick={() => {
+          toggleTheme('light');
+        }}
+      >
+        Toggle
+      </button>
+    </ThemeProvider>
   );
 };
 
