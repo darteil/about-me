@@ -1,3 +1,1 @@
-import FakeLoading from './FakeLoading';
-
-export default FakeLoading;
+export { default as FakeLoading } from './FakeLoading';

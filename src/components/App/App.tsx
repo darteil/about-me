@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import FakeTerminal from '../FakeTerminal';
 import Terminal from '../Terminal';
 import Greeting from '../Terminal/CommandProcessing/ResultCommands/Greeting';
-import FakeLoading from '../FakeLoading';
+import { FakeLoading } from '../FakeLoading';
 import { Theme, themes } from '../../themes';
 import { GlobalStyle } from '../../globalStyle';
 
