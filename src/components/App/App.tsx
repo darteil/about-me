@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import FakeTerminal from '../FakeTerminal';
 import Terminal from '../Terminal';
 import Greeting from '../Terminal/CommandProcessing/ResultCommands/Greeting';
 import FakeLoading from '../FakeLoading';
 import { Theme, themes } from '../../themes';
 import { GlobalStyle } from '../../globalStyle';
-import styles from './styles.css';
+
+const StyledWrap = styled.div`
+  max-height: 85vh;
+  width: 800px;
+  overflow: scroll;
+  margin: 80px auto 0 auto;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
 
 const App = (): JSX.Element => {
   const [showContent, setShowContent] = useState<boolean>(false);
@@ -33,7 +43,7 @@ const App = (): JSX.Element => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       {showLoading && <FakeLoading />}
-      <div className={styles.app}>
+      <StyledWrap>
         {!showLoading && !isClear && <FakeTerminal onDone={setShowContent} />}
         {showContent && (
           <>
@@ -41,14 +51,7 @@ const App = (): JSX.Element => {
             <Terminal clearStatus={isClear} onClear={setIsClear} />
           </>
         )}
-      </div>
-      <button
-        onClick={() => {
-          toggleTheme('light');
-        }}
-      >
-        Toggle
-      </button>
+      </StyledWrap>
     </ThemeProvider>
   );
 };
