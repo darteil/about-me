@@ -1,17 +1,29 @@
 import React from 'react';
-import styles from './styles.css';
+import styled from 'styled-components';
 
 interface IProps {
   path?: string;
 }
 
+const StyledPrompt = styled.div`
+  margin-right: 8px;
+`;
+
+const StyledUser = styled.span`
+  color: ${props => props.theme.userInfo};
+`;
+
+const StyledPath = styled.span`
+  color: ${props => props.theme.pathInfo};
+`;
+
 const Prompt = (props: IProps): JSX.Element => (
-  <div className={styles.prompt}>
-    <span className={styles.user}>user@darteil-projects</span>
+  <StyledPrompt>
+    <StyledUser>user@darteil-projects</StyledUser>
     <span>:</span>
-    <span className={styles.path}>{props.path}</span>
+    <StyledPath>{props.path}</StyledPath>
     <span>$</span>
-  </div>
+  </StyledPrompt>
 );
 
 Prompt.defaultProps = {

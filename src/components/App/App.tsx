@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import FakeTerminal from '../FakeTerminal';
+import { FakeTerminal } from '../FakeTerminal';
 import Terminal from '../Terminal';
 import Greeting from '../Terminal/CommandProcessing/ResultCommands/Greeting';
 import { FakeLoading } from '../FakeLoading';

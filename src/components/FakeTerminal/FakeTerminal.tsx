@@ -1,11 +1,15 @@
 import React, { useState, Dispatch, SetStateAction } from 'react';
+import styled from 'styled-components';
 import Typist from 'react-typist';
 import Prompt from './Prompt';
-import styles from './styles.css';
 
 interface IProps {
   onDone: Dispatch<SetStateAction<boolean>>;
 }
+
+const StyledCommandLine = styled.div`
+  display: flex;
+`;
 
 const FakeTerminal = (props: IProps): JSX.Element => {
   const [firstLineDone, setFirstLineDone] = useState<boolean>(false);
@@ -13,35 +17,31 @@ const FakeTerminal = (props: IProps): JSX.Element => {
 
   return (
     <>
-      <div className={styles['command-line']}>
+      <StyledCommandLine>
         <Prompt />
-        <div>
-          <Typist
-            startDelay={500}
-            onTypingDone={() => {
-              setFirstLineDone(true);
-            }}
-            cursor={cursorSettings}
-          >
-            <span>cd darteil-projects.ru</span>
-          </Typist>
-        </div>
-      </div>
+        <Typist
+          startDelay={500}
+          onTypingDone={() => {
+            setFirstLineDone(true);
+          }}
+          cursor={cursorSettings}
+        >
+          <span>cd darteil-projects.ru</span>
+        </Typist>
+      </StyledCommandLine>
       {firstLineDone && (
-        <div className={styles['command-line']}>
+        <StyledCommandLine>
           <Prompt path="darteil-projects.ru" />
-          <div>
-            <Typist
-              cursor={cursorSettings}
-              startDelay={400}
-              onTypingDone={() => {
-                props.onDone(true);
-              }}
-            >
-              <span>cat about.txt</span>
-            </Typist>
-          </div>
-        </div>
+          <Typist
+            cursor={cursorSettings}
+            startDelay={400}
+            onTypingDone={() => {
+              props.onDone(true);
+            }}
+          >
+            <span>cat about.txt</span>
+          </Typist>
+        </StyledCommandLine>
       )}
     </>
   );
