@@ -1,13 +1,20 @@
 import React from 'react';
-import styles from './styles.css';
+import styled from 'styled-components';
 
 interface IProp {
   hasError?: boolean;
   handlerClickSuccess: () => void;
 }
 
+const StyledWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+`;
+
 const SuccessMessage = (props: IProp): JSX.Element => (
-  <div className={styles['send-success']}>
+  <StyledWrap>
     {!props.hasError && <p>Ваше сообщение отправлено</p>}
     {props.hasError && (
       <>
@@ -16,7 +23,7 @@ const SuccessMessage = (props: IProp): JSX.Element => (
       </>
     )}
     <button onClick={props.handlerClickSuccess}>Хорошо</button>
-  </div>
+  </StyledWrap>
 );
 
 export default SuccessMessage;
