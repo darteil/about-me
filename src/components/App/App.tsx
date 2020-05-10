@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { FakeTerminal } from '../FakeTerminal';
-import Terminal from '../Terminal';
+import { Terminal } from '../Terminal';
 import Greeting from '../Terminal/CommandProcessing/ResultCommands/Greeting';
 import { FakeLoading } from '../FakeLoading';
 import { Theme, themes } from '../../themes';
-import { GlobalStyle } from '../../globalStyle';
+import { GlobalStyle } from '../../shared/globalStyle';
 
 const StyledWrap = styled.div`
   max-height: 85vh;

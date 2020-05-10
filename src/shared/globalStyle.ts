@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
 
   .quill .ql-snow .ql-tooltip {
     box-shadow: none;
-    border: ${props => `1px solid ${props.theme.feedbackBorder}`}
+    border: ${props => `1px solid ${props.theme.feedbackBorder}`};
     color: ${props => props.theme.feedbackColor};
     background-color: ${props => props.theme.feedbackBackground};
   }
