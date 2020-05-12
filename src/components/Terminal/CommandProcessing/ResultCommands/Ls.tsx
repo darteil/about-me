@@ -1,8 +1,15 @@
 import React from 'react';
-import styles from '../../styles.css';
+import styled from 'styled-components';
+
+const StyledWrap = styled.div`
+  display: flex;
+  p > span {
+    margin-right: 20px;
+  }
+`;
 
 const Ls = (): JSX.Element => (
-  <div className={styles.ls}>
+  <StyledWrap>
     <p>
       <span>professional-skills.txt</span>
       <span>projects.txt</span>
@@ -10,7 +17,7 @@ const Ls = (): JSX.Element => (
       <span>about.txt</span>
       <span>work-experience.txt</span>
     </p>
-  </div>
+  </StyledWrap>
 );
 
 export default Ls;
