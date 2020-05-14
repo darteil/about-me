@@ -7,6 +7,8 @@ import { FakeLoading } from '../FakeLoading';
 import { Theme, themes } from '../../themes';
 import { GlobalStyle } from '../../shared/globalStyle';
 
+type theme = keyof typeof themes;
+
 const StyledWrap = styled.div`
   max-height: 85vh;
   width: 800px;
@@ -22,17 +24,17 @@ const App = (): JSX.Element => {
   const [showContent, setShowContent] = useState<boolean>(false);
   const [showLoading, setShowLoading] = useState<boolean>(true);
   const [isClear, setIsClear] = useState<boolean>(false);
-  const [theme, setTheme] = useState<Theme>(themes.default);
+  let currentTheme = localStorage.getItem('darteil_projects_theme');
+  currentTheme = currentTheme ? currentTheme : 'default';
+
+  const [theme, setTheme] = useState<Theme>(
+    themes[currentTheme && themes[currentTheme as theme] ? (currentTheme as theme) : 'default'],
+  );
 
   useEffect(() => {
     setTimeout(() => {
       setShowLoading(false);
     }, 3000);
-  }, []);
-
-  useEffect(() => {
-    const currentTheme = localStorage.getItem('darteil_projects_theme');
-    document.documentElement.setAttribute('data-theme', currentTheme || 'default');
   }, []);
 
   const toggleTheme = (themeName: keyof typeof themes) => {
@@ -48,7 +50,7 @@ const App = (): JSX.Element => {
         {showContent && (
           <>
             {!isClear && <Greeting />}
-            <Terminal clearStatus={isClear} onClear={setIsClear} />
+            <Terminal toggleTheme={toggleTheme} clearStatus={isClear} onClear={setIsClear} />
           </>
         )}
       </StyledWrap>
