@@ -1,10 +1,21 @@
 import React from 'react';
-import styles from '../../styles.css';
+import styled from 'styled-components';
+
+const StyledWrap = styled.div`
+  margin: 10px 0;
+  a {
+    color: ${props => props.theme.linksColor};
+  }
+`;
+
+const StyledTitle = styled.div`
+  margin-bottom: 5px;
+`;
 
 const Experience = (): JSX.Element => {
   return (
-    <div className={styles.experience}>
-      <div className={styles['company-title']}>
+    <StyledWrap>
+      <StyledTitle>
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -12,10 +23,10 @@ const Experience = (): JSX.Element => {
         >
           GEOS
         </a>
-      </div>
+      </StyledTitle>
       <div>frontend-разработчик</div>
       <div>Июль 2015 — Октябрь 2018 (3 года и 4 месяца)</div>
-    </div>
+    </StyledWrap>
   );
 };
 

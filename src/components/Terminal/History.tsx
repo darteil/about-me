@@ -1,12 +1,17 @@
 import React, { Fragment } from 'react';
+import styled from 'styled-components';
 import Prompt from '../FakeTerminal/Prompt';
-import styles from './styles.css';
 
 export interface IHistory {
   id: string;
   command: string;
   output: () => JSX.Element;
 }
+
+const StyledWrap = styled.div`
+  display: flex;
+  height: 16px;
+`;
 
 interface IProp {
   history: IHistory[];
@@ -18,10 +23,10 @@ export const History = (props: IProp): JSX.Element => {
       {props.history.map(
         (item: IHistory): JSX.Element => (
           <Fragment key={item.id}>
-            <div className={styles['command-line']}>
+            <StyledWrap>
               <Prompt path="darteil-projects.ru"></Prompt>
               <div>{item.command}</div>
-            </div>
+            </StyledWrap>
             {item.output()}
           </Fragment>
         ),

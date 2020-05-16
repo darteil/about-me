@@ -1,11 +1,25 @@
 import React from 'react';
-import styles from '../../styles.css';
+import styled from 'styled-components';
 
-const CompleteStatus = () => <span className={styles['complete-status']}>✔️</span>;
-const WaitStatus = () => <span className={styles['wait-status']}>●</span>;
+const StyledWrap = styled.div`
+  ul {
+    list-style: none;
+  }
+`;
+
+const StyledCompleteStatus = styled.span`
+  color: ${props => props.theme.profSkillsComplete};
+`;
+
+const StyledWaitStatus = styled.span`
+  color: ${props => props.theme.profSkillsWait};
+`;
+
+const CompleteStatus = () => <StyledCompleteStatus>✔️</StyledCompleteStatus>;
+const WaitStatus = () => <StyledWaitStatus>●</StyledWaitStatus>;
 
 const Skills = (): JSX.Element => (
-  <div className={styles.skills}>
+  <StyledWrap>
     <ul>
       <li>
         HTML <CompleteStatus />
@@ -29,7 +43,7 @@ const Skills = (): JSX.Element => (
         TypeScript <WaitStatus /> (знаком с ним, но нет опыта коммерческой разработки)
       </li>
     </ul>
-  </div>
+  </StyledWrap>
 );
 
 export default Skills;

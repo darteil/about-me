@@ -1,11 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
 import Loader from '../FakeLoading/Loader';
-import styles from './styles.css';
+
+const StyledWrap = styled.div`
+  width: 800px;
+  margin: 10px auto;
+`;
 
 const FeedbackLoading = () => (
-  <div className={styles['feedback-loader']}>
+  <StyledWrap>
     Form loading <Loader />
-  </div>
+  </StyledWrap>
 );
 
 export default FeedbackLoading;

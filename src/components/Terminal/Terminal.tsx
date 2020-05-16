@@ -5,13 +5,14 @@ import TerminalContext from './TerminalContext';
 import CommandBlock from './CommandBlock';
 import { History, IHistory } from './History';
 import { Commands } from './CommandProcessing/outputs';
-import switchTheme from './switchTheme';
+import { themes } from '../../themes';
 import FeedbackLoading from '../Feedback/FeedbackLoading';
 
 const Feedback = React.lazy(() => import('../Feedback'));
 
 interface IProps {
   onClear: Dispatch<SetStateAction<boolean>>;
+  toggleTheme: (theme: keyof typeof themes) => void;
   clearStatus: boolean;
 }
 
@@ -29,6 +30,30 @@ const Terminal = (props: IProps): JSX.Element => {
       setCommandsHistory((prevState: string[]) => {
         return [command, ...prevState];
       });
+    }
+  };
+
+  const switchTheme = (command: string) => {
+    switch (command) {
+      case Commands.switchThemeDefault: {
+        localStorage.setItem('darteil_projects_theme', 'default');
+        props.toggleTheme('default');
+        break;
+      }
+      case Commands.switchThemeLight: {
+        localStorage.setItem('darteil_projects_theme', 'light');
+        props.toggleTheme('light');
+        break;
+      }
+      case Commands.switchThemeSolarized: {
+        localStorage.setItem('darteil_projects_theme', 'solarized');
+        props.toggleTheme('solarized');
+        break;
+      }
+      default: {
+        localStorage.setItem('darteil_projects_theme', 'default');
+        props.toggleTheme('default');
+      }
     }
   };
 

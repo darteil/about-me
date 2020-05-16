@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import styles from './styles.css';
+import styled from 'styled-components';
+
+const StyledSpinner = styled.span`
+  color: ${props => props.theme.spinnerColor};
+  font-weight: bolder;
+  font-size: 18px;
+`;
 
 const frames: string[] = ['.  ', '.. ', '...', '   '];
 
@@ -22,7 +28,7 @@ const Loader = (): JSX.Element => {
     };
   }, []);
 
-  return <span className={styles.spinner}>{frames[indicator]}</span>;
+  return <StyledSpinner>{frames[indicator]}</StyledSpinner>;
 };
 
 export default Loader;

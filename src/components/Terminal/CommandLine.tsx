@@ -1,13 +1,25 @@
 import React, { useState, KeyboardEvent, useRef, useContext, useEffect } from 'react';
+import styled from 'styled-components';
 import TerminalContext from './TerminalContext';
 import Prompt from '../FakeTerminal/Prompt';
 import { autocompleteFileNames, IAutocompleteResult } from './autocompleteFileNames';
-import styles from './styles.css';
 
 interface IProp {
   onInput: (text: string) => void;
   setCustomResult: (command: string, output: () => JSX.Element) => void;
 }
+
+const StyledWrap = styled.div`
+  display: flex;
+  height: 16px;
+  input {
+    width: 410px;
+    background-color: ${props => props.theme.primaryBg};
+    outline: none;
+    border: none;
+    color: ${props => props.theme.primaryColor};
+  }
+`;
 
 const CommandLine = (props: IProp): JSX.Element => {
   const [commandSend, setCommandSend] = useState<boolean>(false);
@@ -121,13 +133,13 @@ const CommandLine = (props: IProp): JSX.Element => {
 
   return (
     <>
-      <div className={styles['command-line']}>
+      <StyledWrap>
         <Prompt path="darteil-projects.ru" />
         {commandSend && <div>{command}</div>}
         {!commandSend && (
           <input autoFocus maxLength={25} onBlur={onBlur} ref={inputElement} onKeyDown={onKeyDown} type="text" />
         )}
-      </div>
+      </StyledWrap>
     </>
   );
 };

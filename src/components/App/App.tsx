@@ -1,14 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import FakeTerminal from '../FakeTerminal';
-import Terminal from '../Terminal';
+import styled, { ThemeProvider } from 'styled-components';
+import { FakeTerminal } from '../FakeTerminal';
+import { Terminal } from '../Terminal';
 import Greeting from '../Terminal/CommandProcessing/ResultCommands/Greeting';
-import FakeLoading from '../FakeLoading';
-import styles from './styles.css';
+import { FakeLoading } from '../FakeLoading';
+import { Theme, themes } from '../../themes';
+import { GlobalStyle } from '../../shared/globalStyle';
+
+type theme = keyof typeof themes;
+
+const StyledWrap = styled.div`
+  max-height: 85vh;
+  width: 800px;
+  overflow: scroll;
+  margin: 80px auto 0 auto;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
 
 const App = (): JSX.Element => {
   const [showContent, setShowContent] = useState<boolean>(false);
   const [showLoading, setShowLoading] = useState<boolean>(true);
   const [isClear, setIsClear] = useState<boolean>(false);
+  let currentTheme = localStorage.getItem('darteil_projects_theme');
+  currentTheme = currentTheme ? currentTheme : 'default';
+
+  const [theme, setTheme] = useState<Theme>(
+    themes[currentTheme && themes[currentTheme as theme] ? (currentTheme as theme) : 'default'],
+  );
 
   useEffect(() => {
     setTimeout(() => {
@@ -16,24 +37,24 @@ const App = (): JSX.Element => {
     }, 3000);
   }, []);
 
-  useEffect(() => {
-    const currentTheme = localStorage.getItem('darteil_projects_theme');
-    document.documentElement.setAttribute('data-theme', currentTheme || 'default');
-  }, []);
+  const toggleTheme = (themeName: keyof typeof themes) => {
+    setTheme(themes[themeName]);
+  };
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
       {showLoading && <FakeLoading />}
-      <div className={styles.app}>
+      <StyledWrap>
         {!showLoading && !isClear && <FakeTerminal onDone={setShowContent} />}
         {showContent && (
           <>
             {!isClear && <Greeting />}
-            <Terminal clearStatus={isClear} onClear={setIsClear} />
+            <Terminal toggleTheme={toggleTheme} clearStatus={isClear} onClear={setIsClear} />
           </>
         )}
-      </div>
-    </>
+      </StyledWrap>
+    </ThemeProvider>
   );
 };
 

@@ -1,3 +1,3 @@
-import Input from './Input';
+import Feedback from './Feedback';
 
-export default Input;
+export default Feedback;
