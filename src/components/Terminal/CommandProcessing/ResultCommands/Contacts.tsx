@@ -1,8 +1,19 @@
 import React from 'react';
-import styles from '../../styles.css';
+import styled from 'styled-components';
+
+const StyledWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  a {
+    color: ${props => props.theme.linksColor};
+  }
+  a:hover {
+    opacity: 0.8;
+  }
+`;
 
 const Contacts = (): JSX.Element => (
-  <div className={styles.contacts}>
+  <StyledWrap>
     <p>
       Skype: <a href="skype:darteil.work?chat">live:darteil.work</a>
     </p>
@@ -15,7 +26,7 @@ const Contacts = (): JSX.Element => (
       </a>
     </p>
     <p>Вы так же можете ввести в терминал команду &quot;feedback&quot; и оставить сообщение там</p>
-  </div>
+  </StyledWrap>
 );
 
 export default Contacts;

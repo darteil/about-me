@@ -1,24 +1,38 @@
 import React from 'react';
-import styles from '../../styles.css';
+import styled from 'styled-components';
+
+const StyledWrap = styled.div`
+  ul {
+    list-style: none;
+  }
+`;
+
+const StyledThemesList = styled.ul`
+  padding-left: 25px;
+`;
+
+const StyledTitle = styled.li`
+  font-weight: bold;
+`;
 
 const Help = (): JSX.Element => (
-  <div className={styles.help}>
+  <StyledWrap>
     <p>ls - список доступных файлов</p>
     <p>cat [filename] - просмотр файла</p>
     <p>clear - очистка экрана</p>
     <p>switch theme [theme name] - сменить тему оформления</p>
-    <ul className={styles['themes-list']}>
-      <li className={styles.title}>
+    <StyledThemesList>
+      <StyledTitle>
         Доступные темы:
         <ul>
           <li>-default</li>
           <li>-light</li>
           <li>-solarized</li>
         </ul>
-      </li>
-    </ul>
+      </StyledTitle>
+    </StyledThemesList>
     <p>feedback - оставить сообщение</p>
-  </div>
+  </StyledWrap>
 );
 
 export default Help;

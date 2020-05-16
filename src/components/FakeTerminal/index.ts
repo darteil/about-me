@@ -1,3 +1,1 @@
-import FakeTerminal from './FakeTerminal';
-
-export default FakeTerminal;
+export { default as FakeTerminal } from './FakeTerminal';
