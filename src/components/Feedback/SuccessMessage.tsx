@@ -11,6 +11,10 @@ const StyledWrap = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 50px;
+  button:hover {
+    background-color: ${props => props.theme.feedbackButtonBackgroundHover};
+    color: ${props => props.theme.feedbackButtonColorHover};
+  }
 `;
 
 const SuccessMessage = (props: IProp): JSX.Element => (
