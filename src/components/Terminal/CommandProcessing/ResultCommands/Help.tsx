@@ -25,9 +25,9 @@ const Help = (): JSX.Element => (
       <StyledTitle>
         Доступные темы:
         <ul>
-          <li>-default</li>
-          <li>-light</li>
-          <li>-solarized</li>
+          <li>default</li>
+          <li>light</li>
+          <li>solarized</li>
         </ul>
       </StyledTitle>
     </StyledThemesList>
