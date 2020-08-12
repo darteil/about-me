@@ -16,9 +16,6 @@ const StyledWrap = styled.div`
 const Projects = (): JSX.Element => (
   <StyledWrap>
     <p>Примеры веб-приложений:</p>
-    <a target="_blank" rel="noopener noreferrer" href="https://github.com/darteil/darteil-projects.ru">
-      darteil-projects.ru (source code)
-    </a>
     <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/maze-game/">
       MazeGame
     </a>
@@ -27,6 +24,9 @@ const Projects = (): JSX.Element => (
     </a>
     <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/poe-ladder">
       POELadder
+    </a>
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/darteil/darteil-projects.ru">
+      darteil-projects.ru (source code)
     </a>
   </StyledWrap>
 );
