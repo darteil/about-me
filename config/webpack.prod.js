@@ -25,6 +25,8 @@ module.exports = merge(base, {
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: path.resolve(__dirname, '../dist'),
     }),
-    new CopyWebpackPlugin([{ from: publicPathFolder }]),
+    new CopyWebpackPlugin({
+      patterns: [{ from: publicPathFolder, to: distPath }],
+    }),
   ],
 });
