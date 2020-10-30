@@ -22,8 +22,8 @@ const StyledLiStarting = styled.li`
 `;
 
 const packagesList: string[] = [
-  'React (16.8.6)...',
-  'ReactDOM (16.8.6)...',
+  'React (17.0.1)...',
+  'ReactDOM (17.0.1)...',
   'react-typist (2.0.5)...',
   'axios (0.19.0)...',
 ];
