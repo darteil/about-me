@@ -20,11 +20,6 @@ const Contacts = (): JSX.Element => (
     <p>
       Email: <a href="mailto:darteil.work@gmail.com">darteil.work@gmail.com</a>
     </p>
-    <p>
-      <a target="_blank" rel="noopener noreferrer" href="https://moikrug.ru/crazyraccoon">
-        Профиль &quot;Хабр Карьера&quot;
-      </a>
-    </p>
     <p>Вы так же можете ввести в терминал команду &quot;feedback&quot; и оставить сообщение там</p>
   </StyledWrap>
 );
