@@ -1,5 +1,5 @@
 const path = require('path');
-const merge = require('webpack-merge');
+const {merge} = require('webpack-merge');
 const base = require('./webpack.base.js');
 
 const publicFolderPath = path.resolve(__dirname, '../public');
@@ -19,7 +19,7 @@ module.exports = merge(base, {
       {
         context: ['/api'],
         target: 'http://localhost:3000',
-        pathRewrite: { '^/api': '' },
+        pathRewrite: {'^/api': ''},
       },
     ],
   },
