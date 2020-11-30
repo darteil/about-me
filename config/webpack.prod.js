@@ -1,6 +1,6 @@
-const merge = require('webpack-merge');
+const {merge} = require('webpack-merge');
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const TerserJSPlugin = require('terser-webpack-plugin');
@@ -18,7 +18,7 @@ module.exports = merge(base, {
     publicPath: '',
   },
   optimization: {
-    minimizer: [new TerserJSPlugin({ extractComments: false })],
+    minimizer: [new TerserJSPlugin({extractComments: false})],
   },
   plugins: [
     new WebpackBar(),
@@ -26,7 +26,7 @@ module.exports = merge(base, {
       cleanOnceBeforeBuildPatterns: path.resolve(__dirname, '../dist'),
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: publicPathFolder, to: distPath }],
+      patterns: [{from: publicPathFolder, to: distPath}],
     }),
   ],
 });
