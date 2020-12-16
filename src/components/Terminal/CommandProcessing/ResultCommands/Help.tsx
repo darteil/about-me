@@ -9,9 +9,6 @@ const StyledWrap = styled.div`
 
 const StyledThemesList = styled.ul`
   padding-left: 25px;
-`;
-
-const StyledTitle = styled.li`
   font-weight: bold;
 `;
 
@@ -22,14 +19,14 @@ const Help = (): JSX.Element => (
     <p>clear - очистка экрана</p>
     <p>switch theme [theme name] - сменить тему оформления</p>
     <StyledThemesList>
-      <StyledTitle>
+      <li>
         Доступные темы:
         <ul>
           <li>default</li>
           <li>light</li>
           <li>solarized</li>
         </ul>
-      </StyledTitle>
+      </li>
     </StyledThemesList>
     <p>feedback - оставить сообщение</p>
   </StyledWrap>
