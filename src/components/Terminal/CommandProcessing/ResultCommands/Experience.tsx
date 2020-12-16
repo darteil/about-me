@@ -3,13 +3,13 @@ import styled from 'styled-components';
 
 const StyledWrap = styled.div`
   margin: 10px 0;
-  a {
-    color: ${props => props.theme.linksColor};
-  }
 `;
 
 const StyledTitle = styled.div`
   margin-bottom: 5px;
+  a {
+    color: ${props => props.theme.linksColor};
+  }
 `;
 
 const Experience = (): JSX.Element => {
