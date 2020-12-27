@@ -8,4 +8,6 @@ const TerminalContext = React.createContext<TerminalContext>({
   commandsHistory: [],
 });
 
+TerminalContext.displayName = 'TerminalContext';
+
 export default TerminalContext;
