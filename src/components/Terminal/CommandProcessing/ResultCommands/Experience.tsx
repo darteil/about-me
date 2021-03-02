@@ -19,7 +19,7 @@ const Experience = (): JSX.Element => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://2gis.ru/tomsk/search/%D0%B3%D0%B5%D0%BE%D1%81?m=84.982228%2C56.464483%2F16.34"
+          href="https://www.google.ru/maps/place/%D0%93%D0%95%D0%9E%D0%A1/@56.464108,84.9786692,18z/data=!3m1!4b1!4m5!3m4!1s0x432693628b267e45:0x658a77c0de5b557d!8m2!3d56.464108!4d84.979443"
         >
           GEOS
         </a>
