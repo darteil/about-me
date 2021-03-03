@@ -5,32 +5,38 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const indexFilePath = path.resolve(__dirname, '../src/index.tsx');
 
-module.exports = {
-  entry: indexFilePath,
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(ts|tsx|js)$/,
-        exclude: /(node_modules)/,
-        use: [
-          {
-            loader: 'ts-loader',
-            options: {
-              getCustomTransformers: () => ({ before: [styledComponentsTransformer] }),
+module.exports = (env, argv) => {
+  const devMode = argv.mode !== 'production';
+
+  return {
+    entry: indexFilePath,
+    resolve: {
+      extensions: ['.ts', '.tsx', '.js'],
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(ts|tsx|js)$/,
+          exclude: /(node_modules)/,
+          use: [
+            {
+              loader: 'ts-loader',
+              options: {
+                getCustomTransformers: () => {
+                  if (devMode) return { before: [styledComponentsTransformer] };
+                },
+              },
             },
-          },
-        ],
-      },
+          ],
+        },
+      ],
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        inject: true,
+        template: path.resolve(__dirname, '../public/index.html'),
+        filename: 'index.html',
+      }),
     ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: path.resolve(__dirname, '../public/index.html'),
-      filename: 'index.html',
-    }),
-  ],
+  };
 };
