@@ -29,10 +29,10 @@ const CommandLine = (props: IProp): JSX.Element => {
   const [previousCommandIndex, setPreviousCommandIndex] = useState<number | null>(null);
   const [tabKeyPressTime, setTabKeyPressTime] = useState<number>(0);
 
-  const ENTER_KEY = 13;
-  const ARROW_UP_KEY = 38;
-  const ARROW_DOWN_KEY = 40;
-  const TAB_KEY = 9;
+  const ENTER_KEY = 'Enter';
+  const ARROW_UP_KEY = 'ArrowUp';
+  const ARROW_DOWN_KEY = 'ArrowDown';
+  const TAB_KEY = 'Tab';
 
   const setInputCommand = (value: string) => {
     if (inputElement.current) {
@@ -50,8 +50,9 @@ const CommandLine = (props: IProp): JSX.Element => {
 
   const onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
     const text = event.currentTarget.value;
+    console.log(event.key);
 
-    switch (event.keyCode) {
+    switch (event.key) {
       case ENTER_KEY: {
         props.onInput(text);
         setCommandSend(true);
