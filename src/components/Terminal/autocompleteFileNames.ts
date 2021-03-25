@@ -1,5 +1,5 @@
 const command = 'cat ';
-const files = ['projects.txt', 'contacts.txt', 'about.txt', 'professional-skills.txt', 'work-experience.txt'];
+const files = ['projects.txt', 'contacts.txt', 'about.txt', 'skills.txt', 'work-experience.txt'];
 
 interface IAutocompleteResult {
   result: string;
