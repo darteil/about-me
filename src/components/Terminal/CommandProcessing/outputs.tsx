@@ -16,7 +16,7 @@ const Commands = {
   ls: 'ls',
   catProjects: 'cat projects.txt',
   catContacts: 'cat contacts.txt',
-  catSkills: 'cat professional-skills.txt',
+  catSkills: 'cat skills.txt',
   catWorkExperience: 'cat work-experience.txt',
   clear: 'clear',
   feedback: 'feedback',

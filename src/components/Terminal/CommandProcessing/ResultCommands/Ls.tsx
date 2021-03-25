@@ -11,7 +11,7 @@ const StyledWrap = styled.div`
 const Ls = (): JSX.Element => (
   <StyledWrap>
     <p>
-      <span>professional-skills.txt</span>
+      <span>skills.txt</span>
       <span>projects.txt</span>
       <span>contacts.txt</span>
       <span>about.txt</span>
