@@ -50,7 +50,6 @@ const CommandLine = (props: IProp): JSX.Element => {
 
   const onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
     const text = event.currentTarget.value;
-    console.log(event.key);
 
     switch (event.key) {
       case ENTER_KEY: {
