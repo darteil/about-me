@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import ReactQuill from 'react-quill';
 import SuccessMessage from './SuccessMessage';
+import SendPending from './SendPending';
 import APIService from '../../shared/APIService';
 
 interface IProp {
@@ -54,6 +55,7 @@ const Input = (props: IProp): JSX.Element => {
   const [text, setText] = useState<string>('');
   const [messageSend, setMessageSend] = useState<boolean>(false);
   const [sendError, setSendError] = useState<boolean>(false);
+  const [sendPending, setSendPending] = useState<boolean>(false);
 
   const modules = {
     toolbar: [
@@ -67,11 +69,14 @@ const Input = (props: IProp): JSX.Element => {
   const formats = ['header', 'bold', 'italic', 'underline', 'strike', 'list', 'bullet', 'indent', 'link'];
 
   const sendMessage = () => {
+    setSendPending(true);
     APIService.sendMessage(text)
       .then(() => {
+        setSendPending(false);
         setMessageSend(true);
       })
       .catch(() => {
+        setSendPending(false);
         setMessageSend(true);
         setSendError(true);
       });
@@ -92,8 +97,9 @@ const Input = (props: IProp): JSX.Element => {
 
   return (
     <StyledWrap>
+      {sendPending && <SendPending />}
       {messageSend && <SuccessMessage hasError={sendError} handlerClickSuccess={handleSuccess} />}
-      {!messageSend && (
+      {!messageSend && !sendPending && (
         <>
           <ReactQuill value={text} onChange={handleChange} modules={modules} formats={formats} />
           <StyledButtonsWrap>
