@@ -15,7 +15,7 @@ const StyledWrap = styled.div`
 
 const Projects = (): JSX.Element => (
   <StyledWrap>
-    <p>Примеры веб-приложений:</p>
+    <p>Примеры веб-приложений (ссылки кликабельны):</p>
     <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/maze-game/">
       MazeGame
     </a>
