@@ -15,7 +15,7 @@ const StyledThemesList = styled.ul`
 const Help = (): JSX.Element => (
   <StyledWrap>
     <p>ls - список доступных файлов</p>
-    <p>cat [filename] - просмотр файла</p>
+    <p>cat [filename] - просмотр файла, используйте TAB для автодополнения имен файлов</p>
     <p>clear - очистка экрана</p>
     <p>switch theme [theme name] - сменить тему оформления</p>
     <StyledThemesList>
