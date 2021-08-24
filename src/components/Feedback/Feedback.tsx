@@ -52,10 +52,10 @@ const StyledButtonsWrap = styled.div`
 `;
 
 const Input = (props: IProp): JSX.Element => {
-  const [text, setText] = useState<string>('');
-  const [messageSend, setMessageSend] = useState<boolean>(false);
-  const [sendError, setSendError] = useState<boolean>(false);
-  const [sendPending, setSendPending] = useState<boolean>(false);
+  const [text, setText] = useState('');
+  const [messageSend, setMessageSend] = useState(false);
+  const [sendError, setSendError] = useState(false);
+  const [sendPending, setSendPending] = useState(false);
 
   const modules = {
     toolbar: [

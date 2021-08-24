@@ -22,12 +22,12 @@ const StyledWrap = styled.div`
 `;
 
 const CommandLine = (props: IProp): JSX.Element => {
-  const [commandSend, setCommandSend] = useState<boolean>(false);
-  const [command, setCommand] = useState<string>('');
+  const [commandSend, setCommandSend] = useState(false);
+  const [command, setCommand] = useState('');
   const inputElement = useRef<HTMLInputElement>(null);
   const { commandsHistory } = useContext(TerminalContext);
   const [previousCommandIndex, setPreviousCommandIndex] = useState<number | null>(null);
-  const [tabKeyPressTime, setTabKeyPressTime] = useState<number>(0);
+  const [tabKeyPressTime, setTabKeyPressTime] = useState(0);
 
   const ENTER_KEY = 'Enter';
   const ARROW_UP_KEY = 'ArrowUp';

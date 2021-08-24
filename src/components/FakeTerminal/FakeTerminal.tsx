@@ -12,7 +12,7 @@ const StyledCommandLine = styled.div`
 `;
 
 const FakeTerminal = (props: IProps): JSX.Element => {
-  const [firstLineDone, setFirstLineDone] = useState<boolean>(false);
+  const [firstLineDone, setFirstLineDone] = useState(false);
   const cursorSettings = { hideWhenDone: true, hideWhenDoneDelay: 10 };
 
   return (

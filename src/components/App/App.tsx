@@ -21,9 +21,9 @@ const StyledWrap = styled.div`
 `;
 
 const App = (): JSX.Element => {
-  const [showContent, setShowContent] = useState<boolean>(false);
-  const [showLoading, setShowLoading] = useState<boolean>(true);
-  const [isClear, setIsClear] = useState<boolean>(false);
+  const [showContent, setShowContent] = useState(false);
+  const [showLoading, setShowLoading] = useState(true);
+  const [isClear, setIsClear] = useState(false);
   let currentTheme = localStorage.getItem('darteil_projects_theme');
   currentTheme = currentTheme ? currentTheme : 'default';
 
