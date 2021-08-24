@@ -15,6 +15,8 @@ const StyledTitle = styled.div`
 const Experience = (): JSX.Element => {
   return (
     <StyledWrap>
+      <div>Последние места работы</div>
+      <div>----------------------</div>
       <StyledTitle>
         <a
           target="_blank"

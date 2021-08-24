@@ -18,7 +18,7 @@ interface IProps {
 
 const Terminal = (props: IProps): JSX.Element => {
   const [history, setHistory] = useState<IHistory[]>([]);
-  const [showFeedback, setShowFeedback] = useState<boolean>(false);
+  const [showFeedback, setShowFeedback] = useState(false);
   const [commandsHistory, setCommandsHistory] = useState<string[]>([]);
 
   const feedbackClose = () => {

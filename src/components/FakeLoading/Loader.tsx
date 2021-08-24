@@ -10,7 +10,7 @@ const StyledSpinner = styled.span`
 const frames: string[] = ['.  ', '.. ', '...', '   '];
 
 const Loader = (): JSX.Element => {
-  const [indicator, setIndicator] = useState<number>(0);
+  const [indicator, setIndicator] = useState(0);
 
   useEffect(() => {
     const intervalId = setInterval(() => {

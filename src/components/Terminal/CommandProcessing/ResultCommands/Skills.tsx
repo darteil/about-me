@@ -5,6 +5,9 @@ const StyledWrap = styled.div`
   ul {
     list-style: none;
   }
+  ul li {
+    margin-bottom: 5px;
+  }
 `;
 
 const StyledCompleteStatus = styled.span`
