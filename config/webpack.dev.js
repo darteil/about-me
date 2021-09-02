@@ -11,9 +11,10 @@ module.exports = (env, argv) =>
       chunkFilename: '[name].chunk.js',
     },
     devServer: {
-      contentBase: publicFolderPath,
-      stats: 'errors-only',
-      overlay: true,
+      static: publicFolderPath,
+      client: {
+        overlay: true,
+      },
       port: 4000,
       historyApiFallback: true,
       proxy: [
