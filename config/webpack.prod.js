@@ -14,8 +14,8 @@ module.exports = (env, argv) =>
     stats: 'errors-only',
     output: {
       path: distPath,
-      filename: 'js/[name].[hash].js',
-      chunkFilename: 'js/[name].[hash].chunk.js',
+      filename: 'js/[name].[fullhash].js',
+      chunkFilename: 'js/[name].[fullhash].chunk.js',
       publicPath: '',
     },
     optimization: {
@@ -27,7 +27,7 @@ module.exports = (env, argv) =>
         cleanOnceBeforeBuildPatterns: path.resolve(__dirname, '../dist'),
       }),
       new CopyWebpackPlugin({
-        patterns: [{ from: publicPathFolder, to: distPath }],
+        patterns: [{ from: publicPathFolder + '/favicon.png', to: distPath }],
       }),
     ],
   });
