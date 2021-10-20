@@ -11,11 +11,11 @@ const StyledWrap = styled.div`
 `;
 
 const StyledCompleteStatus = styled.span`
-  color: ${props => props.theme.profSkillsComplete};
+  color: ${(props) => props.theme.profSkillsComplete};
 `;
 
 const StyledWaitStatus = styled.span`
-  color: ${props => props.theme.profSkillsWait};
+  color: ${(props) => props.theme.profSkillsWait};
 `;
 
 const CompleteStatus = () => <StyledCompleteStatus>✔️</StyledCompleteStatus>;

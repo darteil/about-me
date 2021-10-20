@@ -10,11 +10,11 @@ const StyledPrompt = styled.div`
 `;
 
 const StyledUser = styled.span`
-  color: ${props => props.theme.userInfo};
+  color: ${(props) => props.theme.userInfo};
 `;
 
 const StyledPath = styled.span`
-  color: ${props => props.theme.pathInfo};
+  color: ${(props) => props.theme.pathInfo};
 `;
 
 const Prompt = (props: IProps): JSX.Element => (

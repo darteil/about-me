@@ -10,11 +10,11 @@ const StyledWrap = styled.div`
 `;
 
 const StyledOkIndicator = styled.span`
-  color: ${props => props.theme.okIndicator};
+  color: ${(props) => props.theme.okIndicator};
 `;
 
 const StyledWaitIndicator = styled.span`
-  color: ${props => props.theme.waitIndicator};
+  color: ${(props) => props.theme.waitIndicator};
 `;
 
 const StyledLiStarting = styled.li`

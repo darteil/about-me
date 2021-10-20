@@ -22,32 +22,32 @@ const StyledWrap = styled.div`
   margin-left: auto;
   margin-right: auto;
   z-index: 2;
-  background-color: ${props => props.theme.feedbackButtonBackground};
+  background-color: ${(props) => props.theme.feedbackButtonBackground};
   button {
     width: 200px;
     height: 30px;
     font-size: 14px;
-    color: ${props => props.theme.feedbackButtonColor};
+    color: ${(props) => props.theme.feedbackButtonColor};
     outline: none;
-    background-color: ${props => props.theme.feedbackButtonBackground};
-    border: ${props => `1px solid ${props.theme.feedbackButtonBorder}`};
+    background-color: ${(props) => props.theme.feedbackButtonBackground};
+    border: ${(props) => `1px solid ${props.theme.feedbackButtonBorder}`};
   }
   button:hover {
     cursor: pointer;
-    color: ${props => props.theme.feedbackButtonColorHover};
+    color: ${(props) => props.theme.feedbackButtonColorHover};
   }
 `;
 
 const StyledButtonsWrap = styled.div`
   z-index: 3;
-  border-top: ${props => `1px solid ${props.theme.feedbackBorder}`};
+  border-top: ${(props) => `1px solid ${props.theme.feedbackBorder}`};
   padding: 5px;
   & > button {
     margin-left: 5px;
   }
   & > button:hover {
-    border: ${props => `1px solid ${props.theme.feedbackButtonBorderHover}`};
-    background-color: ${props => props.theme.feedbackButtonBackgroundHover};
+    border: ${(props) => `1px solid ${props.theme.feedbackButtonBorderHover}`};
+    background-color: ${(props) => props.theme.feedbackButtonBackgroundHover};
   }
 `;
 

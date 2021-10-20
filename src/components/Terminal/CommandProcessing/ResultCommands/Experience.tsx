@@ -8,7 +8,7 @@ const StyledWrap = styled.div`
 const StyledTitle = styled.div`
   margin-bottom: 5px;
   a {
-    color: ${props => props.theme.linksColor};
+    color: ${(props) => props.theme.linksColor};
   }
 `;
 

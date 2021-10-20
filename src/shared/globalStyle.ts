@@ -7,8 +7,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: monospace;
     font-size: 14px;
-    background-color: ${props => props.theme.primaryBg};
-    color: ${props => props.theme.primaryColor};
+    background-color: ${(props) => props.theme.primaryBg};
+    color: ${(props) => props.theme.primaryColor};
     padding: 5px;
   }
 
@@ -32,20 +32,20 @@ export const GlobalStyle = createGlobalStyle`
 
   .quill .ql-toolbar.ql-snow,
   .quill .ql-container.ql-snow {
-    border: ${props => `1px solid ${props.theme.feedbackBorder}`}
+    border: ${(props) => `1px solid ${props.theme.feedbackBorder}`}
   }
 
   .quill .ql-snow .ql-tooltip {
     box-shadow: none;
-    border: ${props => `1px solid ${props.theme.feedbackBorder}`};
-    color: ${props => props.theme.feedbackColor};
-    background-color: ${props => props.theme.feedbackBackground};
+    border: ${(props) => `1px solid ${props.theme.feedbackBorder}`};
+    color: ${(props) => props.theme.feedbackColor};
+    background-color: ${(props) => props.theme.feedbackBackground};
   }
 
   .quill .ql-snow .ql-tooltip input[type='text'] {
-    color: ${props => props.theme.feedbackColor};
-    background-color: ${props => props.theme.feedbackBackground};
-    border: ${props => `1px solid ${props.theme.feedbackBorder}`}
+    color: ${(props) => props.theme.feedbackColor};
+    background-color: ${(props) => props.theme.feedbackBackground};
+    border: ${(props) => `1px solid ${props.theme.feedbackBorder}`}
   }
 
   .quill .ql-snow .ql-tooltip input[type='text']:focus,
@@ -56,25 +56,25 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .quill .ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options {
-    border-color: ${props => props.theme.feedbackBorder};
+    border-color: ${(props) => props.theme.feedbackBorder};
   }
 
   .quill .ql-snow .ql-picker-options {
-    background-color: ${props => props.theme.feedbackBackground};
+    background-color: ${(props) => props.theme.feedbackBackground};
   }
 
   /* Icon colors */
   .quill .ql-snow .ql-fill,
   .ql-snow .ql-stroke.ql-fill {
-    fill: ${props => props.theme.feedbackIconColor};
+    fill: ${(props) => props.theme.feedbackIconColor};
   }
 
   .quill .ql-snow .ql-stroke {
-    stroke: ${props => props.theme.feedbackIconColor};
+    stroke: ${(props) => props.theme.feedbackIconColor};
   }
 
   .quill .ql-snow .ql-picker {
-    color: ${props => props.theme.feedbackIconColor};
+    color: ${(props) => props.theme.feedbackIconColor};
   }
 
   .quill .ql-snow.ql-toolbar button:hover,
@@ -91,7 +91,7 @@ export const GlobalStyle = createGlobalStyle`
   .quill .ql-snow .ql-toolbar .ql-picker-item:hover,
   .quill .ql-snow.ql-toolbar .ql-picker-item.ql-selected,
   .quill .ql-snow .ql-toolbar .ql-picker-item.ql-selected {
-    color: ${props => props.theme.feedbackIconHover};
+    color: ${(props) => props.theme.feedbackIconHover};
   }
 
   .quill .ql-snow.ql-toolbar button:hover .ql-fill,
@@ -122,7 +122,7 @@ export const GlobalStyle = createGlobalStyle`
   .quill .ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke.ql-fill,
   .quill .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill,
   .quill .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke.ql-fill {
-    fill: ${props => props.theme.feedbackIconHover};
+    fill: ${(props) => props.theme.feedbackIconHover};
   }
 
   .quill .ql-snow.ql-toolbar button:hover .ql-stroke,
@@ -153,10 +153,10 @@ export const GlobalStyle = createGlobalStyle`
   .quill .ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke-miter,
   .quill .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter,
   .quill .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter {
-    stroke: ${props => props.theme.feedbackIconHover};
+    stroke: ${(props) => props.theme.feedbackIconHover};
   }
 
   .quill .ql-snow a {
-    color: ${props => props.theme.feedbackIconHover};
+    color: ${(props) => props.theme.feedbackIconHover};
   }
 `;
