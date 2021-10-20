@@ -5,7 +5,7 @@ const StyledWrap = styled.div`
   display: flex;
   flex-direction: column;
   a {
-    color: ${props => props.theme.linksColor};
+    color: ${(props) => props.theme.linksColor};
   }
   a:hover {
     opacity: 0.8;

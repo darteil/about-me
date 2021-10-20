@@ -14,10 +14,10 @@ const StyledWrap = styled.div`
   height: 16px;
   input {
     width: 410px;
-    background-color: ${props => props.theme.primaryBg};
+    background-color: ${(props) => props.theme.primaryBg};
     outline: none;
     border: none;
-    color: ${props => props.theme.primaryColor};
+    color: ${(props) => props.theme.primaryColor};
   }
 `;
 

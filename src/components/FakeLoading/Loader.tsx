@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const StyledSpinner = styled.span`
-  color: ${props => props.theme.spinnerColor};
+  color: ${(props) => props.theme.spinnerColor};
   font-weight: bolder;
   font-size: 18px;
 `;

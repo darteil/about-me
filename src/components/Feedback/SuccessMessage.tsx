@@ -12,8 +12,8 @@ const StyledWrap = styled.div`
   align-items: center;
   padding-top: 50px;
   button:hover {
-    background-color: ${props => props.theme.feedbackButtonBackgroundHover};
-    color: ${props => props.theme.feedbackButtonColorHover};
+    background-color: ${(props) => props.theme.feedbackButtonBackgroundHover};
+    color: ${(props) => props.theme.feedbackButtonColorHover};
   }
 `;
 

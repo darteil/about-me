@@ -10,7 +10,7 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
-    '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/no-empty-function': 'error',
     '@typescript-eslint/interface-name-prefix': 0,
     '@typescript-eslint/no-explicit-any': 0,
     'prettier/prettier': 'error',
