@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/github/license/darteil/darteil-projects.ru?style=for-the-badge)](https://github.com/darteil/darteil-projects.ru/blob/master/LICENSE.md)
 
-[http://darteil-projects.ru/](http://darteil-projects.ru/)
+Url: [https://darteil.github.io/about-me/](https://darteil.github.io/about-me/)
 
 ## Installation and run project.
 
