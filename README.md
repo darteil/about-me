@@ -1,6 +1,6 @@
 # Portfolio
 
-[![GitHub license](https://img.shields.io/github/license/darteil/darteil-projects.ru?style=for-the-badge)](https://github.com/darteil/darteil-projects.ru/blob/master/LICENSE.md) [![pipeline status](https://img.shields.io/gitlab/pipeline/darteil_projects/darteil-projects-ru/master?style=for-the-badge)](https://gitlab.com/darteil_projects/darteil-projects-ru/commits/master)
+[![GitHub license](https://img.shields.io/github/license/darteil/darteil-projects.ru?style=for-the-badge)](https://github.com/darteil/darteil-projects.ru/blob/master/LICENSE.md)
 
 [http://darteil-projects.ru/](http://darteil-projects.ru/)
 
