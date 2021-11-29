@@ -10,8 +10,7 @@
   "author": "Romanov Yuri",
   "license": "MIT",
   "scripts": {
-    "start": "./node_modules/.bin/webpack serve --config ./config/webpack.dev.js --mode development",
-    "lint": "./node_modules/.bin/prettier --config ./.prettierrc.js ./src/**/*.tsx ./src/**/*.ts --write"
+    "start": "./node_modules/.bin/webpack serve --config ./config/webpack.dev.js --mode development"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.3",
