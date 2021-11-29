@@ -28,7 +28,6 @@ const Help = (): JSX.Element => (
         </ul>
       </li>
     </StyledThemesList>
-    <p>feedback - оставить сообщение</p>
   </StyledWrap>
 );
 

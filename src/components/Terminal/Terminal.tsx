@@ -6,9 +6,6 @@ import CommandBlock from './CommandBlock';
 import { History, IHistory } from './History';
 import { Commands } from './CommandProcessing/outputs';
 import { themes } from '../../themes';
-import FeedbackLoading from '../Feedback/FeedbackLoading';
-
-const Feedback = React.lazy(() => import('../Feedback'));
 
 interface IProps {
   onClear: Dispatch<SetStateAction<boolean>>;
@@ -18,12 +15,7 @@ interface IProps {
 
 const Terminal = (props: IProps): JSX.Element => {
   const [history, setHistory] = useState<IHistory[]>([]);
-  const [showFeedback, setShowFeedback] = useState(false);
   const [commandsHistory, setCommandsHistory] = useState<string[]>([]);
-
-  const feedbackClose = () => {
-    setShowFeedback(false);
-  };
 
   const addNewCommandToHistory = (command: string) => {
     if (!commandsHistory.includes(command)) {
@@ -67,9 +59,6 @@ const Terminal = (props: IProps): JSX.Element => {
       setHistory([]);
       addNewCommandToHistory(Commands.clear);
       if (!props.clearStatus) props.onClear(true);
-    } else if (command === Commands.feedback) {
-      setShowFeedback(true);
-      saveCommand();
     } else if (/^switch theme /i.test(command)) {
       switchTheme(command);
       saveCommand();
@@ -86,16 +75,7 @@ const Terminal = (props: IProps): JSX.Element => {
   return (
     <TerminalContext.Provider value={{ commandsHistory }}>
       <History history={history} />
-      {showFeedback ? (
-        ReactDOM.createPortal(
-          <Suspense fallback={FeedbackLoading()}>
-            <Feedback onClose={feedbackClose} />
-          </Suspense>,
-          document.body,
-        )
-      ) : (
-        <CommandBlock push={pushCommand} key={uuid()} />
-      )}
+      <CommandBlock push={pushCommand} key={uuid()} />
     </TerminalContext.Provider>
   );
 };
