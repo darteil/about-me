@@ -19,7 +19,6 @@ const Commands = {
   catSkills: 'cat skills.txt',
   catWorkExperience: 'cat work-experience.txt',
   clear: 'clear',
-  feedback: 'feedback',
   sudoSu: 'sudo su',
   empty: '',
 
@@ -40,7 +39,6 @@ Results.set(Commands.ls, Ls);
 Results.set(Commands.help, Help);
 Results.set(Commands.sudoSu, SudoSu);
 Results.set(Commands.clear, Empty);
-Results.set(Commands.feedback, Empty);
 Results.set(Commands.switchThemeDefault, Empty);
 Results.set(Commands.switchThemeLight, Empty);
 Results.set(Commands.switchThemeSolarized, Empty);
