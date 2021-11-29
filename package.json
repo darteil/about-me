@@ -1,10 +1,10 @@
 {
-  "name": "darteil-projects.ru",
-  "version": "1.0.0",
+  "name": "about-me",
+  "version": "0.1.0",
   "description": "Portfolio web site",
   "repository": {
     "type": "git",
-    "url": "https://github.com/darteil/darteil-projects.ru"
+    "url": "https://github.com/darteil/about-me"
   },
   "main": "index.tsx",
   "author": "Romanov Yuri",
