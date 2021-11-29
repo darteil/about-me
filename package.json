@@ -25,6 +25,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-typescript": "^0.14.0",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.4.0",
     "prettier": "^2.4.1",
     "terser-webpack-plugin": "^5.2.0",
