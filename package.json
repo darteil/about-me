@@ -9,9 +9,10 @@
   "main": "index.tsx",
   "author": "Romanov Yuri",
   "license": "MIT",
+  "homepage": "https://darteil.github.io/about-me",
   "scripts": {
-    "build": "./node_modules/.bin/webpack --config ./config/webpack.prod.js --mode production",
-    "lint": "./node_modules/.bin/prettier --config ./.prettierrc.js ./src/**/*.tsx ./src/**/*.ts --write"
+    "deploy": "gh-pages -d dist",
+    "build": "./node_modules/.bin/webpack --config ./config/webpack.prod.js --mode production"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.3",
