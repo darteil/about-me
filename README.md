@@ -2,8 +2,6 @@
 
 [![GitHub license](https://img.shields.io/github/license/darteil/darteil-projects.ru?style=for-the-badge)](https://github.com/darteil/darteil-projects.ru/blob/master/LICENSE.md)
 
-Url: [https://darteil.github.io/about-me/](https://darteil.github.io/about-me/)
-
 ## Installation and run project.
 
 Switch to 'dev' branch.
