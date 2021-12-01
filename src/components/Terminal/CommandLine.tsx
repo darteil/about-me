@@ -134,7 +134,7 @@ const CommandLine = (props: IProp): JSX.Element => {
   return (
     <>
       <StyledWrap>
-        <Prompt path="darteil-projects.ru" />
+        <Prompt path="darteil.github.io/about-me" />
         {commandSend && <div>{command}</div>}
         {!commandSend && (
           <input autoFocus maxLength={30} onBlur={onBlur} ref={inputElement} onKeyDown={onKeyDown} type="text" />

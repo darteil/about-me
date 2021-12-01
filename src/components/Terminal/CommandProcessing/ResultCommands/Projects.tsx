@@ -16,14 +16,11 @@ const StyledWrap = styled.div`
 const Projects = (): JSX.Element => (
   <StyledWrap>
     <p>Примеры веб-приложений (ссылки кликабельны):</p>
-    <a target="_blank" rel="noopener noreferrer" href="https://github.com/darteil/darteil-projects.ru">
-      darteil-projects.ru (source code)
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/darteil/about-me">
+      this site (source code)
     </a>
-    <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/maze-game/">
+    <a target="_blank" rel="noopener noreferrer" href="https://darteil.github.io/maze-game">
       MazeGame
-    </a>
-    <a target="_blank" rel="noopener noreferrer" href="http://darteil-projects.ru/stack/">
-      StackGame
     </a>
     <a target="_blank" rel="noopener noreferrer" href="https://github.com/darteil/twitch-chat-viewer">
       CLI Twitch chat viewer

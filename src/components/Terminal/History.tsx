@@ -24,7 +24,7 @@ export const History = (props: IProp): JSX.Element => {
         (item: IHistory): JSX.Element => (
           <Fragment key={item.id}>
             <StyledWrap>
-              <Prompt path="darteil-projects.ru"></Prompt>
+              <Prompt path="darteil.github.io/about-me"></Prompt>
               <div>{item.command}</div>
             </StyledWrap>
             {item.output()}

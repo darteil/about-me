@@ -28,22 +28,22 @@ const Terminal = (props: IProps): JSX.Element => {
   const switchTheme = (command: string) => {
     switch (command) {
       case Commands.switchThemeDefault: {
-        localStorage.setItem('darteil_projects_theme', 'default');
+        localStorage.setItem('theme', 'default');
         props.toggleTheme('default');
         break;
       }
       case Commands.switchThemeLight: {
-        localStorage.setItem('darteil_projects_theme', 'light');
+        localStorage.setItem('theme', 'light');
         props.toggleTheme('light');
         break;
       }
       case Commands.switchThemeSolarized: {
-        localStorage.setItem('darteil_projects_theme', 'solarized');
+        localStorage.setItem('theme', 'solarized');
         props.toggleTheme('solarized');
         break;
       }
       default: {
-        localStorage.setItem('darteil_projects_theme', 'default');
+        localStorage.setItem('theme', 'default');
         props.toggleTheme('default');
       }
     }
