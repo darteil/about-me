@@ -24,7 +24,7 @@ const App = (): JSX.Element => {
   const [showContent, setShowContent] = useState(false);
   const [showLoading, setShowLoading] = useState(true);
   const [isClear, setIsClear] = useState(false);
-  let currentTheme = localStorage.getItem('darteil_projects_theme');
+  let currentTheme = localStorage.getItem('theme');
   currentTheme = currentTheme ? currentTheme : 'default';
 
   const [theme, setTheme] = useState<Theme>(

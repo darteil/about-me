@@ -26,12 +26,12 @@ const FakeTerminal = (props: IProps): JSX.Element => {
           }}
           cursor={cursorSettings}
         >
-          <span>cd darteil-projects.ru</span>
+          <span>cd darteil.github.io/about-me/</span>
         </Typist>
       </StyledCommandLine>
       {firstLineDone && (
         <StyledCommandLine>
-          <Prompt path="darteil-projects.ru" />
+          <Prompt path="darteil.github.io/about-me" />
           <Typist
             cursor={cursorSettings}
             startDelay={400}

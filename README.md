@@ -1,6 +1,6 @@
 # Portfolio
 
-[![GitHub license](https://img.shields.io/github/license/darteil/darteil-projects.ru?style=for-the-badge)](https://github.com/darteil/darteil-projects.ru/blob/master/LICENSE.md)
+[![GitHub license](https://img.shields.io/github/license/darteil/about-me?style=for-the-badge)](https://github.com/darteil/about-me/blob/master/LICENSE.md)
 
 ## Installation and run project.
 

@@ -19,7 +19,7 @@ const StyledPath = styled.span`
 
 const Prompt = (props: IProps): JSX.Element => (
   <StyledPrompt>
-    <StyledUser>user@darteil-projects</StyledUser>
+    <StyledUser>darteil@github</StyledUser>
     <span>:</span>
     <StyledPath>{props.path}</StyledPath>
     <span>$</span>
