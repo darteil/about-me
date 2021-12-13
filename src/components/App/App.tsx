@@ -25,10 +25,10 @@ const App = (): JSX.Element => {
   const [showLoading, setShowLoading] = useState(true);
   const [isClear, setIsClear] = useState(false);
   let currentTheme = localStorage.getItem('theme');
-  currentTheme = currentTheme ? currentTheme : 'default';
+  currentTheme = currentTheme || 'default';
 
   const [theme, setTheme] = useState<Theme>(
-    themes[currentTheme && themes[currentTheme as theme] ? (currentTheme as theme) : 'default'],
+    themes[currentTheme && themes[currentTheme as theme] ? (currentTheme as theme) : 'default']
   );
 
   useEffect(() => {

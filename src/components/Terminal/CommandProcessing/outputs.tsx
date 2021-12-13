@@ -25,7 +25,7 @@ const Commands = {
   /* themes */
   switchThemeLight: 'switch theme light',
   switchThemeDefault: 'switch theme default',
-  switchThemeSolarized: 'switch theme solarized',
+  switchThemeSolarized: 'switch theme solarized'
 };
 
 const Results = new Map<string, () => JSX.Element>();

@@ -9,7 +9,7 @@ interface IAutocompleteResult {
 const autocompleteFileNames = (text: string): IAutocompleteResult => {
   let result: IAutocompleteResult = {
     result: '',
-    isSomeMatches: false,
+    isSomeMatches: false
   };
 
   if (text.indexOf(command) !== 0) return result;
@@ -26,7 +26,7 @@ const autocompleteFileNames = (text: string): IAutocompleteResult => {
   if (matches.length > 0 && matches.length < 2) {
     result = {
       result: `${command}${matches[0]}`,
-      isSomeMatches: false,
+      isSomeMatches: false
     };
   } else {
     let str = '';
@@ -35,7 +35,7 @@ const autocompleteFileNames = (text: string): IAutocompleteResult => {
     });
     result = {
       result: str,
-      isSomeMatches: true,
+      isSomeMatches: true
     };
   }
 

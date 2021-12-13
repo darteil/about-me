@@ -27,7 +27,7 @@ const Prompt = (props: IProps): JSX.Element => (
 );
 
 Prompt.defaultProps = {
-  path: '~',
+  path: '~'
 };
 
 export default Prompt;
