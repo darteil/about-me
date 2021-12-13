@@ -25,7 +25,7 @@ const packagesList: string[] = [
   'React (17.0.1)...',
   'ReactDOM (17.0.1)...',
   'react-typist (2.0.5)...',
-  'axios (0.19.0)...',
+  'axios (0.19.0)...'
 ];
 
 const FakeLoading = (): JSX.Element => (
@@ -36,7 +36,7 @@ const FakeLoading = (): JSX.Element => (
           <li key={packageItem}>
             [ <StyledOkIndicator>ok</StyledOkIndicator> ] {packageItem}
           </li>
-        ),
+        )
       )}
       <StyledLiStarting>
         [ <StyledWaitIndicator>wait</StyledWaitIndicator> ] Starting app <Loader />

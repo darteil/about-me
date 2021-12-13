@@ -24,7 +24,7 @@ export const themes = {
     pathInfo: 'royalblue',
     inputBackground: '#000',
     profSkillsComplete: 'green',
-    profSkillsWait: 'chocolate',
+    profSkillsWait: 'chocolate'
   },
   light: {
     primaryBg: '#fff',
@@ -37,7 +37,7 @@ export const themes = {
     pathInfo: 'royalblue',
     inputBackground: '#000',
     profSkillsComplete: 'green',
-    profSkillsWait: 'chocolate',
+    profSkillsWait: 'chocolate'
   },
   solarized: {
     primaryBg: '#002a35',
@@ -50,6 +50,6 @@ export const themes = {
     pathInfo: '#268bd2',
     inputBackground: '#002a35',
     profSkillsComplete: 'green',
-    profSkillsWait: 'chocolate',
-  },
+    profSkillsWait: 'chocolate'
+  }
 };

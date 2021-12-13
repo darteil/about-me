@@ -1,5 +1,4 @@
-import React, { useState, Dispatch, SetStateAction, Suspense } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState, Dispatch, SetStateAction } from 'react';
 import { v1 as uuid } from 'uuid';
 import TerminalContext from './TerminalContext';
 import CommandBlock from './CommandBlock';

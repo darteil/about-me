@@ -29,7 +29,7 @@ export const History = (props: IProp): JSX.Element => {
             </StyledWrap>
             {item.output()}
           </Fragment>
-        ),
+        )
       )}
     </>
   );

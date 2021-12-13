@@ -6,7 +6,7 @@ const getResultCommand = (command: string): (() => JSX.Element) => {
   const notFound = (): JSX.Element => <div>{`${command}: command not found`}</div>;
   const result = Results.get(trimCommand);
 
-  return result ? result : notFound;
+  return result || notFound;
 };
 
 export default getResultCommand;
