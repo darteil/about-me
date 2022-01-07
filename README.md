@@ -1,6 +1,8 @@
-# Portfolio
+# about-me
 
 [![GitHub license](https://img.shields.io/github/license/darteil/about-me?style=for-the-badge)](https://github.com/darteil/about-me/blob/master/LICENSE.md)
+
+Link: https://darteil.github.io/about-me/
 
 ## Installation and run project.
 
