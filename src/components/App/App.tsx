@@ -11,7 +11,7 @@ type theme = keyof typeof themes;
 
 const StyledWrap = styled.div`
   max-height: 85vh;
-  width: 800px;
+  width: 900px;
   overflow: scroll;
   margin: 80px auto 0 auto;
   scrollbar-width: none;
