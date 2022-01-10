@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: monospace;
-    font-size: 14px;
+    font-size: 15px;
     background-color: ${(props) => props.theme.primaryBg};
     color: ${(props) => props.theme.primaryColor};
     padding: 5px;
