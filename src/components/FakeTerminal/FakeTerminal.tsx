@@ -1,6 +1,6 @@
 import React, { useState, Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
-import Typist from 'react-typist';
+import Typewriter, { TypewriterClass, TypewriterState } from 'typewriter-effect';
 import Prompt from './Prompt';
 
 interface IProps {
@@ -11,36 +11,33 @@ const StyledCommandLine = styled.div`
   display: flex;
 `;
 
+const FakePromt = (text: string, callback: (state: TypewriterState) => void) => (
+  <Typewriter
+    onInit={(typewriter) => {
+      typewriter.pauseFor(400).changeDelay(50).typeString(text).callFunction(callback).start();
+    }}
+  />
+);
+
 const FakeTerminal = (props: IProps): JSX.Element => {
   const [firstLineDone, setFirstLineDone] = useState(false);
-  const cursorSettings = { hideWhenDone: true, hideWhenDoneDelay: 10 };
 
   return (
     <>
       <StyledCommandLine>
         <Prompt />
-        <Typist
-          startDelay={500}
-          onTypingDone={() => {
-            setFirstLineDone(true);
-          }}
-          cursor={cursorSettings}
-        >
-          <span>cd darteil.github.io/about-me/</span>
-        </Typist>
+        {FakePromt('cd darteil.github.io/about-me/', (state) => {
+          state.elements.cursor.style.display = 'none';
+          setFirstLineDone(true);
+        })}
       </StyledCommandLine>
       {firstLineDone && (
         <StyledCommandLine>
           <Prompt path="darteil.github.io/about-me" />
-          <Typist
-            cursor={cursorSettings}
-            startDelay={400}
-            onTypingDone={() => {
-              props.onDone(true);
-            }}
-          >
-            <span>cat about.txt</span>
-          </Typist>
+          {FakePromt('cat about.txt', (state) => {
+            state.elements.cursor.style.display = 'none';
+            props.onDone(true);
+          })}
         </StyledCommandLine>
       )}
     </>
