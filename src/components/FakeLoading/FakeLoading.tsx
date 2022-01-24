@@ -24,8 +24,8 @@ const StyledLiStarting = styled.li`
 const packagesList: string[] = [
   'React (17.0.1)...',
   'ReactDOM (17.0.1)...',
-  'react-typist (2.0.5)...',
-  'axios (0.19.0)...'
+  'typewriter-effect (2.18.2)...',
+  'uuid (3.4.0)...'
 ];
 
 const FakeLoading = (): JSX.Element => (
