@@ -1,6 +1,6 @@
 import React, { useState, Dispatch, SetStateAction } from 'react';
 import styled from 'styled-components';
-import Typewriter, { TypewriterClass, TypewriterState } from 'typewriter-effect';
+import Typewriter, { TypewriterState } from 'typewriter-effect';
 import Prompt from './Prompt';
 
 interface IProps {
