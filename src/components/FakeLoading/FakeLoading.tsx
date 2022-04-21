@@ -22,8 +22,8 @@ const StyledLiStarting = styled.li`
 `;
 
 const packagesList: string[] = [
-  'React (17.0.1)...',
-  'ReactDOM (17.0.1)...',
+  'React (18.0.0)...',
+  'ReactDOM (18.0.0)...',
   'typewriter-effect (2.18.2)...',
   'uuid (3.4.0)...'
 ];
